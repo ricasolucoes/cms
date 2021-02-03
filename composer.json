@@ -1,0 +1,71 @@
+{
+    "name": "ricasolucoes/cms",
+    "description": "Recursos de CMS",
+    "type": "library",
+    "keywords": [
+        "ricasolucoes",
+        "cms"
+    ],
+    "license": "MIT",
+    "homepage": "https://ricasolucoes.com/packages/cms/",
+    "support": {
+        "email": "help@ricasolucoes.com",
+        "issues": "https://github.com/ricasolucoes/cms/issues",
+        "source": "https://github.com/ricasolucoes/cms",
+        "docs": "https://github.com/ricasolucoes/cms/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "RiCa Soluções",
+            "homepage": "https://ricasolucoes.com.br",
+            "email": "help@ricasolucoes.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "laravel/framework": "^7.0 || ^8.0",
+        "sierratecnologia/porteiro": "dev-master"
+    },
+    "suggest": {
+        "sierratecnologia/telefonica": "Recomendado",
+        "sierratecnologia/integrations": "Recomendado",
+        "sierratecnologia/facilitador": "Recomendado",
+        "sierratecnologia/transmissor": "Recomendado",
+        "sierratecnologia/stalker": "Recomendado",
+        "sierratecnologia/bancario": "Recomendado",
+        "sierratecnologia/casa": "Recomendado",
+        "sierratecnologia/locaravel": "Recomendado"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cms\\": "src/"
+        },
+        "files": [
+            "helpers/functions.php",
+            "helpers/helpers.php",
+            "helpers/types.php",
+            "helpers/general.php",
+            "helpers/blade.php",
+            "helpers/commerce_helpers.php"
+        ]
+    },
+    "bin": ["bin/code-analyser"],
+    "scripts": {
+        "post-install-cmd": [],
+        "post-update-cmd": [],
+        "post-create-project-cmd": []
+    },
+    "repositories": [{"type": "path","url":"../**","options":{"symlink": true}}],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cms\\CmsProvider"
+            ],
+            "dont-discover": [
+                "laravel/cashier"
+            ]
+        }
+    }
+}

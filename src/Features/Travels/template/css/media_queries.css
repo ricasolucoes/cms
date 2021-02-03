@@ -1,0 +1,1205 @@
+/*
+    Responsive HTML5 Template by Psdslicer
+    Psdslicer.com | PSD to HTML5 | @psdslicer
+    Free for personal and commercial use under the CCA 4.0 license.
+    http://creativecommons.org/licenses/by/4.0/
+*/
+
+@media only screen and (min-width: 1024px) and (max-width: 1179px) {
+.show_ipad2 {
+    display:block
+}
+
+.hide_ipad2 {
+    display:none
+}
+
+.container {
+    max-width:990px;
+}
+
+
+/* #Header
+================================================== */
+
+.nav-bar {
+    max-width:990px
+}
+
+
+/* #Section-1
+================================================== */
+.section-1 article {
+    padding:0 2%
+}
+
+
+/* #Section-2
+================================================== */
+
+.thumbs-list li {
+    width: 24.9%;
+}
+
+
+/* #Section-4
+================================================== */
+.section-4 .article-in {
+    padding:0 35px;
+}
+
+.section-4 .flex-direction-nav .flex-next {
+    right: 0
+}
+
+.section-4 .flex-direction-nav .flex-prev {
+    left: 0
+}
+
+/* #Section-8
+================================================== */
+.section-8 article aside {
+    width:23%;
+    margin:0 1%
+}
+
+/* #Section-10
+================================================== */
+
+.section-10 .map-area .video-container {
+    padding-bottom:102.8%;
+}
+
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+.show_ipad1 {
+    display:block
+}
+
+.hide_ipad1 {
+    display:none
+}
+
+body {
+    font-size:16px;
+    line-height:24px;
+}
+
+h1 {
+    font-size:26px;
+}
+
+h2 {
+    font-size:20px;
+}
+
+h3 {
+    font-size:18px;
+}
+
+.input { 
+    height:35px;
+    padding:8px 20px;
+}
+
+.textarea { 
+    height:150px
+}
+
+.video-container {
+    padding-bottom:60%;
+}
+
+.btn {
+    height:35px;
+    font-size:14px;
+    line-height:35px;
+}
+
+.heading-txt {
+    padding:0 0 30px 0
+}
+
+.heading-txt h1 {
+    padding-bottom:15px
+}
+
+#toTop {
+    right:10px;
+    bottom:150px;
+}
+
+.container {
+    max-width:730px;
+}
+
+/* #Header
+================================================== */
+.nav-bar {
+    max-width:730px
+}
+
+.nav-bar nav {
+    margin:33px 0 0 0
+}
+
+.nav-bar nav .btn {
+    margin:0 0 0 10px;
+}
+
+.nav-bar nav ul li {
+    height:35px;
+    font-size:14px;
+    margin:0
+}
+
+.nav-bar nav ul li a {
+    height:35px;
+    line-height:36px;
+    padding:0 10px
+}
+
+
+.banner-main aside {
+    max-width:500px;
+}
+
+.banner-main aside h1 {
+    font-size:30px;
+    padding:0 0 20px 0
+}
+
+.banner-main aside h2 {
+    font-size:18px;
+}
+
+.banner-main aside p {
+    font-size:17px;
+}
+
+.banner-main aside .btn-txt {
+    height:35px;
+    line-height:33px
+}
+
+.banner-main .screen-capture {
+    width:38%;
+    margin-top:40px;
+}
+
+
+.section-about {
+     padding:65px 0
+}
+
+.section-1 {
+     padding:65px 0 0 0;
+}
+
+.section-1 article {
+    width:33%;
+    padding:0 1.5%
+}
+
+
+.section-2 {
+    padding:65px 0;    
+}
+
+.filter-links ul li a {
+    height:35px;
+    line-height:35px;
+    font-size:15px;
+}
+
+.thumbs-list li {
+    width: 33.33%;
+}
+
+
+.section-4 {
+    padding:65px 0;    
+}
+
+.section-4 aside p {
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:30px;
+}
+
+.section-4 .article-in {
+    padding:0 35px;
+}
+
+.section-4 .flex-direction-nav a {
+    width:26px;
+    height:56px;
+    padding:0;
+}
+
+.section-4 .flex-direction-nav .flex-next {
+    background-size: 26px auto;
+    right: -10px
+}
+
+.section-4 .flex-direction-nav .flex-prev {
+    background-size: 26px auto;
+    left: -10px
+}
+
+
+.section-6 {
+    padding:65px 0
+}
+
+.section-6 h3 {
+    font-size:14px
+}
+
+.section-6 p {
+    padding:0 5% 43px 5%
+}
+
+.section-6 article aside {
+    margin:0 1%
+}
+
+.section-6 article aside figure {
+    margin-bottom:15px
+}
+
+
+.section-7 {
+    padding:65px 0;    
+}
+
+.section-7 article {
+    padding:0
+}
+
+.section-7 article aside .number {
+    font-size:26px;
+    line-height:1em;
+    padding-bottom:0;
+}
+
+
+.section-8 {
+    padding:65px 0 35px 0
+}
+
+.section-8 article aside {
+    width:44.82%;
+    margin:0 2.58% 5.16% 2.58%
+}
+
+.section-9 .notify-info {
+    padding:65px 0
+}
+
+
+.section-10 { 
+    padding:65px 0
+}
+
+.section-10 .map-area .video-container {
+    padding-bottom:125%;
+}
+
+
+.section-11 {
+    padding:60px 0 20px 0
+}
+
+.section-11 article {
+    width:49.6%
+}
+
+.section-11 article .icon-large {
+    padding-top:0
+}
+
+
+
+.section-13 {
+    padding:65px 0;
+}
+
+.section-21 {
+    padding:65px 0;    
+}
+
+.section-21 .contact-info p {
+    font-size:18px;
+    letter-spacing:normal;
+    padding:0;
+}
+
+.call-action {
+    padding:50px 0;
+}
+
+.call-action aside {
+    width:63%;
+    display: inline-block;
+    vertical-align:middle;
+    text-align:left;
+}
+
+.call-action h2 {
+    font-size:24px;
+}
+
+.call-action p {
+    font-size:16px;
+    padding:0;
+}
+
+.call-action .btn {
+    margin:22px 0 0 10px;
+}
+
+footer { 
+    padding:65px 0
+}
+
+#header-inner .nav-bar nav ul li {
+    width:100%;
+    height:auto;
+    padding:0;
+    margin:0;
+}
+
+#header-inner .nav-bar nav ul li a {
+    width:100%;
+    height:auto;
+    line-height:normal;
+    padding:10px 17px;
+}
+
+
+.footer-in {
+    padding:0;
+}
+
+.footer-in .footer-bar {
+    padding-bottom:45px;
+}
+
+}
+
+
+
+@media only screen and (max-width: 767px) {
+.show_mobile1 {
+    display:block
+}
+
+.hide_mobile1 {
+    display:none
+}
+
+body {
+    font-size:14px;
+    line-height:22px;
+}
+
+h1 {
+    font-size:26px;
+}
+
+h2 {
+    font-size:20px;
+}
+
+h3 {
+    font-size:16px;
+}
+
+.textarea { 
+    height:150px
+}
+
+.video-container {
+    padding-bottom:60%;
+}
+
+.btn {
+    font-size:16px;
+}
+
+.heading-txt {
+    padding-bottom:25px;
+}
+
+.heading-txt h1 {
+    padding-bottom:10px;
+}
+
+.heading-txt p {
+    font-size:15px;
+}
+
+#toTop {
+    bottom:20px;
+    right:10px;
+    width:30px;
+    height:30px;
+}
+
+.container {
+    width:100%;
+    max-width:500px;
+    padding:0 20px;
+}
+
+.parallax {
+    background-position:inherit;
+    background-repeat:inherit;
+    background-size:cover;
+    background-attachment:inherit !important;
+}
+
+
+header {
+    width:100%;
+    height:60px;
+    border-bottom:1px solid #333;
+    position:fixed;
+    z-index:1000
+}
+
+header .collapse {
+    height: 0;
+    overflow: hidden;
+}
+
+header .container {
+    max-width:100%;
+    width:100%;
+    padding:0 4%;
+}
+
+header .logo {
+    height:16px;
+    line-height:16px;
+    margin:20px 0;
+}
+
+header .logo img {
+    max-width:100%;
+    max-height:100%;
+}
+
+header .icon-menu {
+    display:block;
+    z-index:12;
+}
+
+.menu-content {
+    width:105%;
+    float:left;
+    background:#111111;
+    margin:3px -4.5% 0 -4.5%;
+}
+
+.nav-bar {
+    max-width:100%;
+    width:100%;
+    float:left;
+    border-bottom:3px solid #333;
+}
+
+.nav-bar nav {
+    width:100%;
+    float:left;
+    margin:0;
+    padding:0;
+}
+
+.nav-bar nav ul {
+    width:100%;
+    float:left
+}
+
+.nav-bar nav ul li {
+    width:100%;
+    height:auto;
+    font-size:16px;
+    border-top:1px solid #333;
+    margin:0;
+    padding:0 15px;
+}
+
+.nav-bar nav ul li a {
+    width:100%;
+    height:auto;
+    line-height:normal;
+    padding:13px 0
+}
+
+.nav-bar nav ul li:hover > a {
+    color:#f05135;
+    background:none;
+}
+
+
+.banner-main {
+    min-height:150px;
+    background:#f9f9f9;
+}
+
+.banner-main .container {
+    max-width:100%;
+    width:100%;
+    padding:0 6%;
+}
+
+.banner-main figure {
+    width:100%;
+    margin: 0;
+}
+
+.banner-main .banner-inner {
+    padding:60px 20px 0 20px;
+}
+
+.banner-main aside h1 {
+    font-size:26px;
+    padding:0 0 15px 0
+}
+
+.banner-main aside h2 {
+    font-size:16px;
+    line-height:1.2em;
+}
+
+.banner-main aside p {
+    height:45px;
+    font-size:14px;
+    line-height:22px;
+    margin:0 0 20px 0;
+}
+
+.banner-main aside .btn-txt {
+    height:30px;
+    font-size:13px;
+    line-height:30px;
+    border:1px solid #f05135;
+}
+
+.banner-main aside #third-slider {
+    margin:0 0 11px 0;
+}
+
+
+.section-1 {
+    padding:40px 0 0 0;
+}
+
+.section-1 article {
+    width:100%;
+    max-width:570px;
+    padding:0;
+}
+
+.section-2 {
+    padding:40px 0;
+}
+
+.filter-links {
+    padding:0 0 25px 0
+}
+
+.filter-links ul {
+    text-align:center
+}
+
+.filter-links ul li {
+    width:auto;
+    max-width:none;
+    margin:0 0 5px 0
+}
+
+.filter-links ul li a {
+    height:30px;
+    line-height:30px;
+    font-size:14px;
+    padding:0 10px;
+    margin:3px 2px;
+}
+
+.thumbs-list li {
+    width: 50%;
+    margin:0;
+}
+
+
+
+
+.section-4 {
+    background:url(../img/banner-large-wds003.jpg) no-repeat center center !important;
+    padding:45px 0;
+}
+
+.section-4 aside h1 {
+    padding-bottom:25px
+}
+
+.section-4 aside p {
+    font-size:14px;
+    line-height:22px;
+    padding-bottom:25px
+}
+
+.section-4 .article-in {
+    padding:0 20px;
+}
+
+.section-4 .flex-direction-nav a {
+    width:20px;
+    height:37px;
+    padding:0;
+}
+
+.section-4 .flex-direction-nav .flex-next {
+    background-size: 20px 37px;
+    right: 0;
+}
+
+.section-4 .flex-direction-nav .flex-prev {
+    left: 0;
+    background-size: 20px 37px;
+}
+
+
+.section-6 {
+    padding:45px 0 25px 0
+}
+
+.section-6 h1 {
+    padding: 0 0 15px 0
+}
+
+.section-6 p {
+    padding:0 0 20px 0
+}
+
+.section-6 article {
+    width:102%;
+    margin:0 -1%
+}
+
+.section-6 article .row {
+    width:100%;
+    float:left;
+    padding-bottom:20px
+}
+
+.section-6 article aside {
+    width:46%;
+    float:left;
+    margin:0 2% 20px 2%
+}
+
+.section-6 article aside figure {
+    margin-bottom:10px
+}
+
+
+.section-7 {
+    background:url(../img/banner-large-wds007.jpg) no-repeat center center !important;
+    padding:40px 0 10px 0;
+}
+
+.section-7 article {
+    padding:0
+}
+
+.section-7 article aside {
+    width:50%;
+    padding-bottom:30px
+}
+
+.section-7 article aside .number {
+    font-size:30px;
+    padding-bottom:0;
+}
+
+.section-8 {
+    padding:40px 0 0 0;
+}
+
+.section-8 article {
+    width:100%;
+    margin:0
+}
+
+.section-8 article aside {
+    width:100%;
+    min-height:490px;
+    margin:0 0 40px 0
+}
+
+
+.section-9 .btn {
+    width:110px;
+    margin:0 0 0 -110px;
+    padding:0
+}
+
+.section-9 .input-bg {
+    padding:0 120px 0 0
+}
+
+.section-9 .notify-info {
+    padding:40px 0
+}
+
+.section-10 {
+    padding:40px 0
+}
+
+.section-10 h2 {
+    padding-bottom:15px
+}
+
+.section-10 article {
+    width:100%;
+    margin:0
+}
+
+.section-10 .right {
+    margin-bottom:-15px;
+    position:relative
+}
+
+.section-10 .map-area {
+    width:100%;
+    float:left;
+}
+
+.section-10 .map-area .video-container {
+    padding-bottom:50%;
+}
+
+
+
+.section-11 {
+    padding:40px 0 0 0
+}
+
+.section-11 article {
+    width:49%;
+    text-align:center;
+    padding:0 15px;
+    margin-bottom:30px
+}
+
+.section-11 article aside {
+    width:100%;
+    float:left;
+    padding:0;
+    position:relative
+}
+
+.section-11 article h3 {
+    font-size:18px;
+}
+
+.section-11 article h3 span {
+    font-size:15px;
+}
+
+.section-11 article .icon {
+    float:none;
+    display:inline-block;
+    margin:0 0 20px 0;
+}
+
+.section-11 article .icon-large {
+    line-height:normal;
+    font-size:100px;
+    padding:0 0 0 45px
+}
+
+
+
+.section-12 {
+    padding:30px 0 27px 0
+}
+
+.section-12 aside h3 {
+    width:100%;
+    float:left;
+    text-align:center;
+    padding:0 0 18px 0;
+    margin:0 0 0 -2px;
+}
+
+.section-12 aside ul {
+    width:100%;
+    float:left;
+    text-align:center
+}
+
+.section-12 aside ul li {
+    float:none;
+    display:inline-block;
+    margin:0 4px
+}
+
+.section-12 aside ul li a {
+    width:30px;
+    height:30px
+}
+
+.section-12 aside ul li a i {
+    font-size:18px;
+    line-height:30px
+}
+
+
+
+.section-13 {
+    width:100%;
+    float:left;
+    padding:40px 0;
+}
+
+.clients-logos .navigation {
+    top:52%;
+}
+
+.clients-logos .navigation a {
+    width:20px;
+    height:40px;
+}
+
+.clients-logos .navigation .previous {
+    background:url(../img/arrow-previous3.png) no-repeat;
+    background-size:20px auto;
+}
+
+.clients-logos .navigation .next {
+    background:url(../img/arrow-next3.png) no-repeat;
+    background-size:20px auto;
+}
+
+
+/* #Section-21
+================================================== */
+
+.section-21 {
+    background:url(../img/banner-large-wds005.jpg) no-repeat center center !important;
+    padding:65px 0;
+}
+
+.section-21 {
+    padding:40px 0;
+}
+
+.section-21 .contact-info p {
+    font-size:18px;
+    letter-spacing:normal;
+}
+
+.section-21 .contact-info article aside {
+    padding:12px 0
+}
+
+.call-action {
+    text-align:center;
+    padding:40px 0;
+}
+
+.call-action aside {
+    width:100%;
+    display: inline-block;
+    vertical-align:middle;
+    text-align:center;
+}
+
+.call-action h2 {
+    font-size:24px;
+}
+
+.call-action p {
+    font-size:16px;
+    padding:0;
+}
+
+.call-action .btn {
+    min-width:150px;
+    height:50px;
+    line-height:50px;
+    vertical-align:middle;
+    float:none;
+    margin:25px 0 0 0;
+}
+
+
+footer {
+    padding:40px 10%
+}
+
+footer .show-s {
+    display:block;
+}
+
+
+
+.icon-menu-txt {
+    font-size:16px;
+    margin:20px 0 0 20px;
+}
+
+.icon-menu-txt i {
+    font-size:22px;
+}
+
+.icon-menu-txt span {
+    margin:-1px 0 0 10px;
+}
+
+#header-inner header {
+    background:none;
+    border:none;
+}
+
+#header-inner .nav-bar {
+    border-bottom:none;
+}
+
+#header-inner .nav-bar nav {
+    width:100%;
+    margin:0;
+}
+
+#header-inner .btn {
+    float:right;
+    margin:30px 0 0 0;
+}
+
+#header-inner .btn:hover {
+    color:#f05135;
+    background:#FFFFFF;
+}
+
+#header-inner .nav-bar nav ul {
+    width:100%;
+    float:left;
+    border-top:1px solid #333333;
+}
+
+#header-inner .nav-bar nav ul li {
+    width:100%;
+    height:auto;
+    border:none;
+    border-bottom:1px solid #333333;
+    padding:0;
+    margin:0;
+}
+
+#header-inner .nav-bar nav ul li a {
+    width:100%;
+    height:auto;
+    padding:7px 17px;
+}
+
+/* Fixed */
+.affix .icon-menu-txt {
+    font-size:16px;
+    margin:20px 0 0 20px;
+}
+
+.affix .icon-menu-txt span {
+    margin:-1px 0 0 10px;
+}
+
+.affix #header-inner header .logo {
+    height:16px;
+    line-height:16px;
+    margin:20px 0;
+}
+
+
+
+.contact-info-in {
+    width:100%;
+    float:left;
+    padding-bottom:50px;
+}
+
+
+
+.footer-in {
+    padding:0;
+}
+
+.footer-in .footer-bar {
+    padding:40px 0;
+}
+
+.footer-in article {
+    width:100%;
+    float:left;
+}
+
+.footer-in article aside {
+    width:100%;
+    border-bottom:1px solid #333333;
+    margin:0;
+    padding:30px 0 10px 0;
+}
+
+.footer-in article aside:first-child {
+    padding-top:0;
+}
+
+.footer-in article aside:last-child {
+    border:none;
+    padding-bottom:0;
+}
+
+.footer-in .copyright {
+    padding:30px 0;
+}
+
+.footer-in .copyright p {
+    width:100%;
+    text-align:center
+}
+
+.footer-in .copyright .right {
+    width:100%;
+    text-align:center
+}
+
+
+.sr-top {
+    padding:60px 0 0 0;
+    margin:-60px 0 0 0;
+}
+
+.sr-top1 {
+    padding:60px 0 0 0;
+    margin:-60px 0 0 0;
+}
+
+.sr-top2 {
+    padding:60px 0 0 0;
+    margin:-60px 0 0 0;
+}
+
+}
+
+
+
+
+@media only screen and (max-width: 479px) {
+.show_mobile2 {
+    display:block
+}
+
+.hide_mobile2 {
+    display:none
+}
+
+.container {
+    width:100%;
+    max-width:280px;
+    padding:0;
+}
+
+
+
+.banner-main figure {
+    width:130%;
+    margin: 0 -15%;
+}
+
+
+
+.filter-links ul li {
+    max-width:none;
+    width:auto;
+}
+
+.thumbs-list li {
+    width: 100%;
+    margin:0;
+}
+
+
+.section-6 article {
+    width:100%;
+    margin:0
+}
+
+.section-6 article .row {
+    padding-bottom:0
+}
+
+.section-6 article aside {
+    width:100%;
+    margin:0 0 20px 0
+}
+
+
+.section-11 {
+    padding:40px 0 10px 0;
+}
+
+.section-11 article {
+    width:100%;
+    padding:0;
+}
+
+
+
+
+.section-21 .contact-info p {
+    font-size:14px;
+}
+
+
+
+.section-10 ul {
+    width:100%;
+}
+
+.section-10 ul li {
+    width:100%;
+    padding:0 0 12px 0;
+}
+
+.section-10 ul li.full {
+    width:100%;
+    padding-right:0;
+}
+
+.section-10 .map-area .video-container {
+    padding-bottom:70%;
+}
+
+}
+
+
+/* Note: Design for a width of 380px */
+@media only screen and (max-width: 379px) {
+
+/* #Banner-main
+================================================== */
+
+.banner-main figure {
+    width:180%;
+    margin: 0 -40%;
+}
+
+}
+
+
