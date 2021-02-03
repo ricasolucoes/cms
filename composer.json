@@ -45,8 +45,7 @@
             "helpers/helpers.php",
             "helpers/types.php",
             "helpers/general.php",
-            "helpers/blade.php",
-            "helpers/commerce_helpers.php"
+            "helpers/blade.php"
         ]
     },
     "bin": ["bin/code-analyser"],
