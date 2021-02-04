@@ -30,6 +30,7 @@ class CmsProvider extends ServiceProvider
 
     public static $providers = [
         \Cms\Providers\HomeServiceProvider::class,
+        \Cms\Providers\FeatureServiceProvider::class,
         \Cms\Providers\RiCaServiceProvider::class,
         \Cms\Providers\CmsEventProvider::class,
         \Cms\Providers\CmsRouteProvider::class,
@@ -215,11 +216,6 @@ class CmsProvider extends ServiceProvider
             $this->app->view->addNamespace('cms-frontend', $this->getResourcesPath('cms'));
         }
 
-
-        
-
-        // Configs
-        $this->app->config->set('cms.modules.cms', include __DIR__.'/config.php');
 
         /*
         |--------------------------------------------------------------------------

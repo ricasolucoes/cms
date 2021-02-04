@@ -17,9 +17,13 @@ class FeatureService
      *
      * @return Collection
      */
-    public function getByKey($key)
+    public function getByKey($code)
     {
-        return $this->model->where('key', $key)->first();
+        return $this->model->where('code', $code)->first();
+    }
+    public function getByCode($code)
+    {
+        return $this->model->where('code', $code)->first();
     }
 
     /**
@@ -27,25 +31,25 @@ class FeatureService
      *
      * @return Collection
      */
-    public function isActive($key)
+    public function isActive($code)
     {
         // VErifica se tem nas Configuracoes, se nao, ja cancela
         if (config('cms.active-core-features', false)) {
-            if (!in_array($key, config('cms.active-core-features'))) {
+            if (!in_array($code, config('cms.active-core-features'))) {
                 return false;
             }
         } else {
-            if (!in_array($key, config('siravel.active-core-features'))) {
+            if (!in_array($code, config('siravel.active-core-features'))) {
                 return false;
             }
         }
 
         // VErifica se ta ativo no banco
-        if (!$feature = $this->model->where('key', $key)->first() || !$feature->is_active) {
+        if (!$feature = $this->model->where('code', $code)->first() || !$feature->is_active) {
             return false;
         }
 
-        if (class_exists(\Siravel\Services\BusinessService::class) && !app(\Siravel\Services\BusinessService::class)->hasFeature($key)){
+        if (class_exists(\Siravel\Services\BusinessService::class) && !app(\Siravel\Services\BusinessService::class)->hasFeature($code)){
             return false;
         }
 
@@ -59,7 +63,7 @@ class FeatureService
      */
     public function paginated()
     {
-        return $this->model->orderBy('key', 'desc')->paginate(env('PAGINATE', 25));
+        return $this->model->orderBy('code', 'desc')->paginate(env('PAGINATE', 25));
     }
 
     /**
@@ -71,7 +75,7 @@ class FeatureService
      */
     public function search($input, $id)
     {
-        $query = $this->model->orderBy('key', 'desc');
+        $query = $this->model->orderBy('code', 'desc');
         $query->where('id', 'LIKE', '%'.$input.'%');
 
         $columns = Schema::getColumnListing('features');

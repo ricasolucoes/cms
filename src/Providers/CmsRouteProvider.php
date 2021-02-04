@@ -35,8 +35,9 @@ class CmsRouteProvider extends ServiceProvider
     {
         $router->group(
             ['namespace' => $this->namespace], function ($router) {
-                include __DIR__.'/../../routes/web.php';
-                include __DIR__.'/../../routes/api.php';
+                include __DIR__.'/../../routes/api/api.php';
+                include __DIR__.'/../../routes/api/cms.php';
+                include __DIR__.'/../../routes/api/v1.php';
             }
         );
     }
