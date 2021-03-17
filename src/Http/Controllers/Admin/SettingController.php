@@ -4,7 +4,7 @@ namespace Facilitador\Http\Controllers\Admin;
 
 use Facilitador\Models\Setting;
 use Illuminate\Http\Request;
-use Siravel\Http\Requests\Admin\SettingRequest;
+use Cms\Http\Requests\Admin\SettingRequest;
 
 class SettingController extends Controller
 {

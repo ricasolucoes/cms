@@ -49,7 +49,7 @@ class FeatureService
             return false;
         }
 
-        if (class_exists(\Siravel\Services\BusinessService::class) && !app(\Siravel\Services\BusinessService::class)->hasFeature($code)){
+        if (class_exists(\Cms\Services\BusinessService::class) && !app(\Cms\Services\BusinessService::class)->hasFeature($code)){
             return false;
         }
 

@@ -13,6 +13,11 @@ class PageService extends BaseService
         $this->repo = app(PageRepository::class);
     }
 
+    public function hasPage(string $page): bool
+    {
+        return !empty($this->repo->findPagesByURL($page));
+    }
+
     /**
      * Get pages as options
      *

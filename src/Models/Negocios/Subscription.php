@@ -2,8 +2,8 @@
 
 namespace Cms\Models\Negocios;
 
-use App\Models\Builders\SubscriptionBuilder;
-use App\Models\Entities\SubscriptionEntity;
+use Cms\Builders\SubscriptionBuilder;
+use Cms\Entities\SubscriptionEntity;
 use App\Models\Model;
 
 /**

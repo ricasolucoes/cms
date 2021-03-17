@@ -19,7 +19,7 @@ Route::get('site-map', 'SiteMapController@index');
 /**
  * Writelabel @todo
  */
-Route::group(['namespace' => 'Writelabel', 'as' => 'writelabel.'], function () {
+// Route::group(['namespace' => 'Writelabel', 'as' => 'writelabel.'], function () {
     Route::get('/', 'PagesController@home');
     Route::get('home', 'PagesController@home');
     Route::get('pages', 'PagesController@all');
@@ -27,4 +27,4 @@ Route::group(['namespace' => 'Writelabel', 'as' => 'writelabel.'], function () {
     Route::get('p/{url}', 'PagesController@show');
 
     Route::get('faqs', 'FaqController@all');
-});
+// });
