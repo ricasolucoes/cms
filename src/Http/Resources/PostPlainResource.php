@@ -2,7 +2,7 @@
 
 namespace Cms\Http\Resources;
 
-use Cms\Models\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 use Illuminate\Http\Resources\Json\JsonResource as Resource;
 use function SiUtils\html_purify;
 use function SiUtils\to_bool;

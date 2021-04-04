@@ -3,7 +3,7 @@
 namespace Cms\Managers;
 
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Cms\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 
 /**
  * Interface PostManager.

@@ -6,7 +6,7 @@ use App\Contants\Tables;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Cms\Builders\PostBuilder;
-use Cms\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 
 use Cms\Models\CmsModel as BaseModel;
 

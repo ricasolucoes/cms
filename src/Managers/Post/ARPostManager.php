@@ -8,7 +8,7 @@ use Illuminate\Contracts\Auth\Guard as Auth;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\ConnectionInterface as Database;
 use Cms\Builders\PostBuilder;
-use Cms\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 use Cms\Managers\PostManager;
 use Cms\Models\Blog\Post;
 

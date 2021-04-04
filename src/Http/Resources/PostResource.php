@@ -2,7 +2,7 @@
 
 namespace Cms\Http\Resources;
 
-use Cms\Models\Entities\PostEntity;
+use Population\Manipule\Entities\PostEntity;
 use Cms\Models\Entities\TagEntity;
 use function SiUtils\to_object;
 
