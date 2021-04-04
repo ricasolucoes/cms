@@ -110,7 +110,7 @@ if(isset($_POST['submitted'])) {
             Notice that this code is asking for the private key, which should not be confused with the public key. You get that from the same page as the public key.
             */
             // What happens when the CAPTCHA was entered incorrectly
-            die(
+            throw new \Exception(
                 "The reCAPTCHA wasn't entered correctly. Go back and try it again." .
                 "(reCAPTCHA said: " . $resp->error . ")"
             );

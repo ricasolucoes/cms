@@ -6,9 +6,11 @@
  * @param  string $path
  * @return string
  */
-function url_storage(string $path): string
-{
-    return \Illuminate\Support\Facades\Config::get('main.storage.url') . $path;
+if (!function_exists('url_storage')) {
+    function url_storage(string $path): string
+    {
+        return \Illuminate\Support\Facades\Config::get('main.storage.url') . $path;
+    }
 }
 
 /**
@@ -17,9 +19,11 @@ function url_storage(string $path): string
  * @param  string $path
  * @return string
  */
-function url_frontend(string $path = ''): string
-{
-    return \Illuminate\Support\Facades\Config::get('main.frontend.url') . $path;
+if (!function_exists('url_frontend')) {
+    function url_frontend(string $path = ''): string
+    {
+        return \Illuminate\Support\Facades\Config::get('main.frontend.url') . $path;
+    }
 }
 
 /**
@@ -27,9 +31,11 @@ function url_frontend(string $path = ''): string
  *
  * @return string
  */
-function url_frontend_sign_in(): string
-{
-    return url_frontend('/sign-in');
+if (!function_exists('url_frontend_sign_in')) {
+    function url_frontend_sign_in(): string
+    {
+        return url_frontend('/sign-in');
+    }
 }
 
 /**
@@ -38,9 +44,11 @@ function url_frontend_sign_in(): string
  * @param  int $id
  * @return string
  */
-function url_frontend_photo(int $id): string
-{
-    return url_frontend(sprintf('/photo/%s', urlencode($id)));
+if (!function_exists('url_frontend_photo')) {
+    function url_frontend_photo(int $id): string
+    {
+        return url_frontend(sprintf('/photo/%s', urlencode($id)));
+    }
 }
 
 /**
@@ -49,9 +57,11 @@ function url_frontend_photo(int $id): string
  * @param  string $tag
  * @return string
  */
-function url_frontend_tag(string $tag): string
-{
-    return url_frontend(sprintf('/photos/tag/%s', urlencode($tag)));
+if (!function_exists('url_frontend_tag')) {
+    function url_frontend_tag(string $tag): string
+    {
+        return url_frontend(sprintf('/photos/tag/%s', urlencode($tag)));
+    }
 }
 
 /**
@@ -60,7 +70,9 @@ function url_frontend_tag(string $tag): string
  * @param  string $token
  * @return string
  */
-function url_frontend_unsubscription(string $token): string
-{
-    return url_frontend(sprintf('/unsubscription/%s', urlencode($token)));
+if (!function_exists('url_frontend_unsubscription')) {
+    function url_frontend_unsubscription(string $token): string
+    {
+        return url_frontend(sprintf('/unsubscription/%s', urlencode($token)));
+    }
 }

@@ -1,6 +1,6 @@
 <div class="">
 
-    @include('layouts.partials.message')
+    @include(\Pedreiro::loadRelativeView('layouts.partials.message'))
 
     <div class="">
         <div>

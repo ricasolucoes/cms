@@ -16,7 +16,7 @@ class BlogController extends Controller
     {
         $this->blogRepository = $blogRepo;
 
-        if (!in_array('blog', config('Cms.active-core-features'))) {
+        if (!\Features::isActive('blog')) {
             return redirect('/')->send();
         }
     }

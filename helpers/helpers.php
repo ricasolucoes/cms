@@ -35,22 +35,24 @@ if (!function_exists('redirect')) {
  * @return string
  * @throws Exception
  */
-function versioned_asset($file = '')
-{
-    static $version = null;
+if (!function_exists('versioned_asset')) {
+    function versioned_asset($file = '')
+    {
+        static $version = null;
 
-    if (is_null($version)) {
-        $versionFile = base_path('version');
-        $version = trim(file_get_contents($versionFile));
+        if (is_null($version)) {
+            $versionFile = base_path('version');
+            $version = trim(file_get_contents($versionFile));
+        }
+
+        $additional = '';
+        if (\Illuminate\Support\Facades\Config::get('app.env') === 'development') {
+            $additional = sha1_file(public_path($file));
+        }
+
+        $path = $file . '?version=' . urlencode($version) . $additional;
+        return baseUrl($path);
     }
-
-    $additional = '';
-    if (\Illuminate\Support\Facades\Config::get('app.env') === 'development') {
-        $additional = sha1_file(public_path($file));
-    }
-
-    $path = $file . '?version=' . urlencode($version) . $additional;
-    return baseUrl($path);
 }
 
 /**
@@ -59,9 +61,11 @@ function versioned_asset($file = '')
  *
  * @return \App\Models\User
  */
-function user()
-{
-    return auth()->user() ?: \App\Models\User::getDefault();
+if (!function_exists('user')) {
+    function user()
+    {
+        return auth()->user() ?: \App\Models\User::getDefault();
+    }
 }
 
 /**
@@ -69,9 +73,11 @@ function user()
  *
  * @return bool
  */
-function signedInUser()
-{
-    return auth()->user() && !auth()->user()->isDefault();
+if (!function_exists('signedInUser')) {
+    function signedInUser()
+    {
+        return auth()->user() && !auth()->user()->isDefault();
+    }
 }
 
 /**
@@ -83,15 +89,17 @@ function signedInUser()
  * @param  Ownable $ownable
  * @return mixed
  */
-function userCan(string $permission, \Support\Models\Ownable $ownable = null)
-{
-    if ($ownable === null) {
-        return user() && user()->can($permission);
-    }
+if (!function_exists('userCan')) {
+    function userCan(string $permission, \Support\Models\Ownable $ownable = null)
+    {
+        if ($ownable === null) {
+            return user() && user()->can($permission);
+        }
 
-    // Check permission on ownable item
-    $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
-    return $permissionService->checkOwnableUserAccess($ownable, $permission);
+        // Check permission on ownable item
+        $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
+        return $permissionService->checkOwnableUserAccess($ownable, $permission);
+    }
 }
 
 /**
@@ -102,10 +110,12 @@ function userCan(string $permission, \Support\Models\Ownable $ownable = null)
  * @param  string|null $entityClass
  * @return bool
  */
-function userCanOnAny(string $permission, string $entityClass = null)
-{
-    $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
-    return $permissionService->checkUserHasPermissionOnAnything($permission, $entityClass);
+if (!function_exists('userCanOnAny')) {
+    function userCanOnAny(string $permission, string $entityClass = null)
+    {
+        $permissionService = app(\Population\Models\Components\Book\Permissions\PermissionService::class);
+        return $permissionService->checkUserHasPermissionOnAnything($permission, $entityClass);
+    }
 }
 
 // /**
@@ -130,31 +140,33 @@ function userCanOnAny(string $permission, string $entityClass = null)
  * @param  bool   $forceAppDomain
  * @return string
  */
-function baseUrl($path, $forceAppDomain = false)
-{
-    $isFullUrl = strpos($path, 'http') === 0;
-    if ($isFullUrl && !$forceAppDomain) {
-        return $path;
-    }
-
-    $path = trim($path, '/');
-    $base = rtrim(\Illuminate\Support\Facades\Config::get('app.url'), '/');
-
-    // Remove non-specified domain if forced and we have a domain
-    if ($isFullUrl && $forceAppDomain) {
-        if (!empty($base) && strpos($path, $base) === 0) {
-            $path = trim(substr($path, strlen($base) - 1));
+if (!function_exists('baseUrl')) {
+    function baseUrl($path, $forceAppDomain = false)
+    {
+        $isFullUrl = strpos($path, 'http') === 0;
+        if ($isFullUrl && !$forceAppDomain) {
+            return $path;
         }
-        $explodedPath = explode('/', $path);
-        $path = implode('/', array_splice($explodedPath, 3));
-    }
 
-    // Return normal url path if not specified in config
-    if (\Illuminate\Support\Facades\Config::get('app.url') === '') {
-        return url($path);
-    }
+        $path = trim($path, '/');
+        $base = rtrim(\Illuminate\Support\Facades\Config::get('app.url'), '/');
 
-    return $base . '/' . $path;
+        // Remove non-specified domain if forced and we have a domain
+        if ($isFullUrl && $forceAppDomain) {
+            if (!empty($base) && strpos($path, $base) === 0) {
+                $path = trim(substr($path, strlen($base) - 1));
+            }
+            $explodedPath = explode('/', $path);
+            $path = implode('/', array_splice($explodedPath, 3));
+        }
+
+        // Return normal url path if not specified in config
+        if (\Illuminate\Support\Facades\Config::get('app.url') === '') {
+            return url($path);
+        }
+
+        return $base . '/' . $path;
+    }
 }
 
 /**
@@ -163,14 +175,16 @@ function baseUrl($path, $forceAppDomain = false)
  * @param  string $path
  * @return string|boolean
  */
-function theme_path($path = '')
-{
-    $theme = \Illuminate\Support\Facades\Config::get('view.theme');
-    if (!$theme) {
-        return false;
-    }
+if (!function_exists('theme_path')) {
+    function theme_path($path = '')
+    {
+        $theme = \Illuminate\Support\Facades\Config::get('view.theme');
+        if (!$theme) {
+            return false;
+        }
 
-    return base_path('themes/' . $theme .($path ? DIRECTORY_SEPARATOR.$path : $path));
+        return base_path('themes/' . $theme .($path ? DIRECTORY_SEPARATOR.$path : $path));
+    }
 }
 
 /**
@@ -184,30 +198,32 @@ function theme_path($path = '')
  * @param  array $attrs
  * @return mixed
  */
-function icon($name, $attrs = [])
-{
-    $attrs = array_merge(
-        [
-        'class' => 'svg-icon',
-        'data-icon' => $name
-        ],
-        $attrs
-    );
-    $attrString = ' ';
-    foreach ($attrs as $attrName => $attr) {
-        $attrString .=  $attrName . '="' . $attr . '" ';
-    }
+if (!function_exists('icon')) {
+    function icon($name, $attrs = [])
+    {
+        $attrs = array_merge(
+            [
+            'class' => 'svg-icon',
+            'data-icon' => $name
+            ],
+            $attrs
+        );
+        $attrString = ' ';
+        foreach ($attrs as $attrName => $attr) {
+            $attrString .=  $attrName . '="' . $attr . '" ';
+        }
 
-    $iconPath = resource_path('assets/icons/' . $name . '.svg');
-    $themeIconPath = theme_path('icons/' . $name . '.svg');
-    if ($themeIconPath && file_exists($themeIconPath)) {
-        $iconPath = $themeIconPath;
-    } elseif (!file_exists($iconPath)) {
-        return '';
-    }
+        $iconPath = resource_path('assets/icons/' . $name . '.svg');
+        $themeIconPath = theme_path('icons/' . $name . '.svg');
+        if ($themeIconPath && file_exists($themeIconPath)) {
+            $iconPath = $themeIconPath;
+        } elseif (!file_exists($iconPath)) {
+            return '';
+        }
 
-    $fileContents = file_get_contents($iconPath);
-    return  str_replace('<svg', '<svg' . $attrString, $fileContents);
+        $fileContents = file_get_contents($iconPath);
+        return  str_replace('<svg', '<svg' . $attrString, $fileContents);
+    }
 }
 
 /**
@@ -220,31 +236,33 @@ function icon($name, $attrs = [])
  * @param  array $overrideData
  * @return string
  */
-function sortUrl($path, $data, $overrideData = [])
-{
-    $queryStringSections = [];
-    $queryData = array_merge($data, $overrideData);
+if (!function_exists('sortUrl')) {
+    function sortUrl($path, $data, $overrideData = [])
+    {
+        $queryStringSections = [];
+        $queryData = array_merge($data, $overrideData);
 
-    // Change sorting direction is already sorted on current attribute
-    if (isset($overrideData['sort']) && $overrideData['sort'] === $data['sort']) {
-        $queryData['order'] = ($data['order'] === 'asc') ? 'desc' : 'asc';
-    } else {
-        $queryData['order'] = 'asc';
-    }
-
-    foreach ($queryData as $name => $value) {
-        $trimmedVal = trim($value);
-        if ($trimmedVal === '') {
-            continue;
+        // Change sorting direction is already sorted on current attribute
+        if (isset($overrideData['sort']) && $overrideData['sort'] === $data['sort']) {
+            $queryData['order'] = ($data['order'] === 'asc') ? 'desc' : 'asc';
+        } else {
+            $queryData['order'] = 'asc';
         }
-        $queryStringSections[] = urlencode($name) . '=' . urlencode($trimmedVal);
-    }
 
-    if (count($queryStringSections) === 0) {
-        return $path;
-    }
+        foreach ($queryData as $name => $value) {
+            $trimmedVal = trim($value);
+            if ($trimmedVal === '') {
+                continue;
+            }
+            $queryStringSections[] = urlencode($name) . '=' . urlencode($trimmedVal);
+        }
 
-    return baseUrl($path . '?' . implode('&', $queryStringSections));
+        if (count($queryStringSections) === 0) {
+            return $path;
+        }
+
+        return baseUrl($path . '?' . implode('&', $queryStringSections));
+    }
 }
 
 
@@ -255,13 +273,15 @@ function sortUrl($path, $data, $overrideData = [])
  * @param  string
  * @return string
  */
-function markup($source)
-{
-    if (is_null($source) || empty($source)) {
-        return '';
+if (!function_exists('markup')) {
+    function markup($source)
+    {
+        if (is_null($source) || empty($source)) {
+            return '';
+        }
+        
+        return with(new \League\CommonMark\CommonMarkConverter())->convertToHtml($source);
     }
-    
-    return with(new \League\CommonMark\CommonMarkConverter())->convertToHtml($source);
 }
 
 /**
@@ -270,9 +290,11 @@ function markup($source)
  * @param  Illuminate\Contracts\Pagination\Presenter
  * @return string
  */
-function pagination_links($presenter)
-{
-    return with(new \Stolz\LaravelFormBuilder\Pagination($presenter));
+if (!function_exists('pagination_links')) {
+    function pagination_links($presenter)
+    {
+        return with(new \Stolz\LaravelFormBuilder\Pagination($presenter));
+    }
 }
 
 /**
@@ -281,25 +303,27 @@ function pagination_links($presenter)
  * @param  array
  * @return string
  */
-function tree(array $nodes, Closure $render = null)
-{
-    $output = '<ul class="no-bullet">';
-    foreach ($nodes as $node) {
-        // Get name
-        $name = (is_null($render)) ? $node['name'] : $render($node);
+if (!function_exists('tree')) {
+    function tree(array $nodes, Closure $render = null)
+    {
+        $output = '<ul class="no-bullet">';
+        foreach ($nodes as $node) {
+            // Get name
+            $name = (is_null($render)) ? $node['name'] : $render($node);
 
-        // Render node
-        $output .= '<li>' . $name;
+            // Render node
+            $output .= '<li>' . $name;
 
-        // Render children
-        if ($node['children']) {
-            $output .= tree($node['children'], $render);
+            // Render children
+            if ($node['children']) {
+                $output .= tree($node['children'], $render);
+            }
+
+            $output .= '</li>';
         }
 
-        $output .= '</li>';
+        return $output .'</ul>';
     }
-
-    return $output .'</ul>';
 }
 
 if (! function_exists('_')) {

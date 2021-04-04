@@ -5,7 +5,32 @@
 
 return [
 
+    /**
+     * Business Ativo
+     */
+    // 'business' => Data\Negocios\Clients\CarolNovaes::class,
+    'business' => false,
+
+
     'login' => true,
+    'packagesMenu' => true,
+    'packagesRoutes' => true,
+
+    /**
+     * Se vai aparecer ou nao sub divisoes do menu na barra superior
+     */
+    'habilityTopNav' => false,
+
+    'db-prefix' => '',
+    // 'db-prefix' => 'siravel_',
+
+    'influencia' => false,
+
+    /**
+     * Business Padrão
+     */
+    'default' =>  env('TENANCY_DEFAULT_HOSTNAME', 'ricasolucoes'),
+
 
     /**
      * Configurações Personalizadas
@@ -41,6 +66,9 @@ return [
         'marketing',
         'midia',
         'productions',
+        'locaravel',
+        // Libera Equipamentos, Acessorios, etc..
+        'espolio'
     ],
 
     /*

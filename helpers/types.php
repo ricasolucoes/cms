@@ -4,69 +4,79 @@
  * @param  $value
  * @return bool
  */
-function to_bool($value): bool
-{
-    return (bool) $value;
+if (!function_exists('to_bool')) {
+    function to_bool($value): bool
+    {
+        return (bool) $value;
+    }
 }
 
 /**
  * @param  $value
  * @return null|int
  */
-function to_int($value): ?int
-{
-    if (is_numeric($value) && $value == 0) {
-        return (int) $value;
-    }
+if (!function_exists('to_int')) {
+    function to_int($value): ?int
+    {
+        if (is_numeric($value) && $value == 0) {
+            return (int) $value;
+        }
 
-    if (is_string($value) && $value == 0) {
-        return (int) $value;
-    }
+        if (is_string($value) && $value == 0) {
+            return (int) $value;
+        }
 
-    if ($value) {
-        return (int) $value;
-    }
+        if ($value) {
+            return (int) $value;
+        }
 
-    return null;
+        return null;
+    }
 }
 
 /**
  * @param  $value
  * @return null|float
  */
-function to_float($value): ?float
-{
-    if (is_numeric($value) && $value == 0) {
-        return (float) $value;
-    }
+if (!function_exists('to_float')) {
+    function to_float($value): ?float
+    {
+        if (is_numeric($value) && $value == 0) {
+            return (float) $value;
+        }
 
-    if (is_string($value) && $value == 0) {
-        return (float) $value;
-    }
+        if (is_string($value) && $value == 0) {
+            return (float) $value;
+        }
 
-    if ($value) {
-        return (float) $value;
-    }
+        if ($value) {
+            return (float) $value;
+        }
 
-    return null;
+        return null;
+    }
 }
 
 /**
  * @param  $value
  * @return null|string
  */
-function to_string($value): ?string
-{
-    return $value ? (string) $value : null;
+if (!function_exists('to_string')) {
+    function to_string($value): ?string
+    {
+        return $value ? (string) $value : null;
+    }
 }
 
 /**
  * @param  $value
  * @return null|array
  */
-function to_array($value): ?array
-{
-    return $value ? (array) $value : null;
+if (!function_exists('to_array')) {
+    function to_array($value): ?array
+    {
+        return $value ? (array) $value : null;
+    }
 }
 
 /**
@@ -74,7 +84,9 @@ function to_array($value): ?array
  * @param  string $className
  * @return null|object
  */
-function to_object($value, string $className)
-{
-    return $value ? new $className($value) : null;
+if (!function_exists('to_object')) {
+    function to_object($value, string $className)
+    {
+        return $value ? new $className($value) : null;
+    }
 }

@@ -45,7 +45,10 @@ class FeatureService
         }
 
         // VErifica se ta ativo no banco
-        if (!$feature = $this->model->where('code', $code)->first() || !$feature->is_active) {
+        if (!$feature = $this->model->where('code', $code)->first()) {
+            return false;
+        }
+        if (!$feature->is_active) {
             return false;
         }
 

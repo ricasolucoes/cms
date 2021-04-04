@@ -49,12 +49,13 @@ class CmsProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Cms' => [
+        'Cms|510' => [
             [
                 'text'        => 'Dash',
                 'route'       => 'cms.sitec.dash',
                 'icon'        => 'fas fa-fw fa-gavel',
                 'icon_color'  => 'blue',
+                'order' => 512,
                 'label_color' => 'success',
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
@@ -63,6 +64,7 @@ class CmsProvider extends ServiceProvider
                 'route'       => 'cms.sitec.profile',
                 'icon'        => 'fas fa-fw fa-gavel',
                 'icon_color'  => 'blue',
+                'order' => 514,
                 'label_color' => 'success',
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
@@ -71,15 +73,17 @@ class CmsProvider extends ServiceProvider
                 'route'       => 'cms.components.actors.profile',
                 'icon'        => 'fas fa-fw fa-gavel',
                 'icon_color'  => 'blue',
+                'order' => 518,
                 'label_color' => 'success',
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
         ],
-        'Painel|200' => [
+        'Painel|501' => [
             [
                 'text' => 'User',
                 'icon' => 'fas fa-fw fa-bomb',
                 'icon_color' => "blue",
+                'order' => 550,
                 'label_color' => "success",
             ],
             'User' => [
@@ -89,6 +93,7 @@ class CmsProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-industry',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
+                    'order' => 555,
                     // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 [
@@ -97,14 +102,17 @@ class CmsProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-industry',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
+                    'order' => 557,
                     // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
+                // @todo Tirar Facilitador
                 [
                     'text'        => 'Logout',
                     'route'       => 'facilitador.logout',
                     'icon'        => 'fas fa-fw fa-industry',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
+                    'order' => 559,
                     // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
             ],
@@ -167,7 +175,11 @@ class CmsProvider extends ServiceProvider
         /**
          * Cms; Routes
          */
-        $this->loadRoutesForRiCa(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'routes');
+        $this->app->booted(
+            function () {
+                $this->routes();
+            }
+        );
 
         // @todo Isso é do Cms remover
         // Config::set(
@@ -187,6 +199,23 @@ class CmsProvider extends ServiceProvider
         //         'engine' => null,
         //     ]
         // );
+    }
+    /**
+     * Register the tool's routes.
+     *
+     * @return void
+     */
+    protected function routes()
+    {
+        if ($this->app->routesAreCached()) {
+            return;
+        }
+
+
+        /**
+         * Porteiro; Routes
+         */
+        $this->loadRoutesForRiCa(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'routes');
     }
 
     /**

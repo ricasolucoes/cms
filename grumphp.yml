@@ -64,7 +64,7 @@ grumphp:
             keywords:
                 - "die\\("
                 - "var_dump\\("
-                - "exit;"
+                # - "exit;"
             whitelist_patterns: []
             triggered_by: ['php']
             regexp_type: G

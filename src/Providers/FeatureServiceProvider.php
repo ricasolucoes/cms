@@ -1,6 +1,6 @@
 <?php
 
-namespace CmsProviders;
+namespace Cms\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

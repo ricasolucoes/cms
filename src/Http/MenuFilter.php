@@ -3,10 +3,7 @@
 namespace Cms\Http;
 
 use Pedreiro\Http\MenuFilter as MenuFilterBase;
-use Illuminate\Support\Facades\Auth;
-use JeroenNoten\LaravelAdminLte\Menu\Builder;
-use Cms;
-use JeroenNoten\LaravelAdminLte\Menu\Filters\FilterInterface;
+use Log;
 
 // use Laratrust;
 
@@ -15,9 +12,10 @@ class MenuFilter extends MenuFilterBase
     public function transform($item)
     {
         // dd(app(\Cms\Services\BusinessService::class));
-        if (!$this->verifyFeature($item)) {
-            return false;
-        }
+        // if (!$this->verifyFeature($item)) {
+        //     Log::debug('Feature Desativada: '.$item['feature']. ' -> Menu: '.$item['text']);
+        //     return false;
+        // }
         return parent::transform($item); // $item; //
     }
 
@@ -32,6 +30,6 @@ class MenuFilter extends MenuFilterBase
             return true;
         }
 
-        return \Feature::isActive($feature);
+        return \Features::isActive($feature);
     }
 }

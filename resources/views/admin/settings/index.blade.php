@@ -11,7 +11,7 @@
     <div class="content">
         <div class="clearfix"></div>
 
-        @include('layouts.partials.message')
+        @include(\Pedreiro::loadRelativeView('layouts.partials.message'))
 
         <div class="clearfix"></div>
 

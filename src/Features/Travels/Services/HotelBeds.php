@@ -159,7 +159,7 @@ class HotelBeds
         }
 
         if ($this->availRS->isEmpty()) {
-            dd('aqui');
+            dd('aquiassssssssssss');
             return [];
         }
 
@@ -172,7 +172,7 @@ class HotelBeds
      */
     public function captureHotelsAndRooms($availRS)
     {
-        dd($availRS);
+        dd('dddddddddddd', $availRS);
         $dataToReturn = [];
         foreach ($availRS->hotels->iterator() as $hotelCode => $hotelData) {
             $hotel = Hotel::firstOrNew(['code' => $hotelData->code]);

@@ -10,7 +10,6 @@ use Overtrue\LaravelFollow\Traits\CanBeBookmarked;
 use Overtrue\LaravelFollow\Traits\CanBeFavorited;
 use Overtrue\LaravelFollow\Traits\CanBeLiked;
 use Overtrue\LaravelFollow\Traits\CanBeVoted;
-use Cms\Contracts\Business\BusinessTrait;
 
 use Cms\Models\CmsModel as BaseModel;
 
@@ -18,7 +17,6 @@ class Article extends BaseModel
 {
     use SoftDeletes;
     use Sluggable;
-    use BusinessTrait;
 
     use CanBeLiked, CanBeFavorited, CanBeVoted, CanBeBookmarked;
 

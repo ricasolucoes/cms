@@ -17,7 +17,7 @@
            <div class="box-body card-body">
                <div class="row">
 
-                   @include('layouts.partials.message')
+                   @include(\Pedreiro::loadRelativeView('layouts.partials.message'))
 
                    {!! Form::model($account, ['route' => ['accounts.update', $account->id], 'method' => 'patch']) !!}
 

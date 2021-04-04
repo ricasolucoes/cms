@@ -6,7 +6,6 @@ use App\Contants\Tables;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Cms\Builders\PostBuilder;
-use Cms\Contracts\Business\BusinessTrait;
 use Cms\Entities\PostEntity;
 
 use Cms\Models\CmsModel as BaseModel;
@@ -29,8 +28,6 @@ use Cms\Models\CmsModel as BaseModel;
  */
 class Post extends BaseModel
 {
-    use BusinessTrait;
-
     public static $classeBuilder = PostBuilder::class;
 
     const PUBLISHED = 'PUBLISHED';

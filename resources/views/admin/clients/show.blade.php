@@ -8,7 +8,7 @@
     </section>
     <div class="content">
 
-        @include('layouts.partials.message')
+        @include(\Pedreiro::loadRelativeView('layouts.partials.message'))
 
         <div class="box card box-primary card-primary">
             <div class="box-body card-body">

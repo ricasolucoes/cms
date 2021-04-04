@@ -55,21 +55,21 @@ function _recaptcha_qsencode($data)
         // Cut the last '&'
         $req=substr($req, 0, strlen($req)-1);
         return $req;
-}
+    }
 
 
 
-/**
- * Submits an HTTP POST to a reCAPTCHA server
- *
- * @param  string   $host
- * @param  string   $path
- * @param  array    $data
- * @param  int port
- * @return array response
- */
-function _recaptcha_http_post($host, $path, $data, $port = 80)
-{
+    /**
+     * Submits an HTTP POST to a reCAPTCHA server
+     *
+     * @param  string   $host
+     * @param  string   $path
+     * @param  array    $data
+     * @param  int port
+     * @return array response
+     */
+    function _recaptcha_http_post($host, $path, $data, $port = 80)
+    {
 
         $req = _recaptcha_qsencode($data);
 
@@ -82,20 +82,22 @@ function _recaptcha_http_post($host, $path, $data, $port = 80)
         $http_request .= $req;
 
         $response = '';
-    if(false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
-            die('Could not open socket');
-    }
+        if(false == ( $fs = @fsockopen($host, $port, $errno, $errstr, 10) ) ) {
+            throw new \Exception(
+                "Could not open socket"
+            );
+        }
 
         fwrite($fs, $http_request);
 
-    while ( !feof($fs) ) {
-            $response .= fgets($fs, 1160); // One TCP-IP packet
-    }
+        while ( !feof($fs) ) {
+                $response .= fgets($fs, 1160); // One TCP-IP packet
+        }
         fclose($fs);
         $response = explode("\r\n\r\n", $response, 2);
 
         return $response;
-}
+    }
 
 
 
@@ -113,7 +115,7 @@ function _recaptcha_http_post($host, $path, $data, $port = 80)
 function recaptcha_get_html($pubkey, $error = null, $use_ssl = false)
 {
     if ($pubkey == null || $pubkey == '') {
-        die("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
+        throw new \Exception("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
     }
     
     if ($use_ssl) {
@@ -161,11 +163,11 @@ class ReCaptchaResponse
 function recaptcha_check_answer($privkey, $remoteip, $challenge, $response, $extra_params = array())
 {
     if ($privkey == null || $privkey == '') {
-        die("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
+        throw new \Exception("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
     }
 
     if ($remoteip == null || $remoteip == '') {
-        die("For security reasons, you must pass the remote ip to reCAPTCHA");
+        throw new \Exception("For security reasons, you must pass the remote ip to reCAPTCHA");
     }
 
     
@@ -227,7 +229,7 @@ function _recaptcha_aes_pad($val)
 function _recaptcha_aes_encrypt($val,$ky)
 {
     if (! function_exists("mcrypt_encrypt")) {
-        die("To use reCAPTCHA Mailhide, you need to have the mcrypt php module installed.");
+        throw new \Exception("To use reCAPTCHA Mailhide, you need to have the mcrypt php module installed.");
     }
     $mode=MCRYPT_MODE_CBC;   
     $enc=MCRYPT_RIJNDAEL_128;
@@ -245,7 +247,7 @@ function _recaptcha_mailhide_urlbase64($x)
 function recaptcha_mailhide_url($pubkey, $privkey, $email)
 {
     if ($pubkey == '' || $pubkey == null || $privkey == "" || $privkey == null) {
-        die(
+        throw new \Exception(
             "To use reCAPTCHA Mailhide, you have to sign up for a public and private key, " .
             "you can do so at <a href='http://www.google.com/recaptcha/mailhide/apikey'>http://www.google.com/recaptcha/mailhide/apikey</a>"
         );
