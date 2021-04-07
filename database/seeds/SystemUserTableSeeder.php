@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Services\UserService;
 use App\Models\User;
 use Porteiro\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class SystemUserTableSeeder extends Seeder {
 
