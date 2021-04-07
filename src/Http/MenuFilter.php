@@ -12,10 +12,10 @@ class MenuFilter extends MenuFilterBase
     public function transform($item)
     {
         // dd(app(\Cms\Services\BusinessService::class));
-        // if (!$this->verifyFeature($item)) {
-        //     Log::debug('Feature Desativada: '.$item['feature']. ' -> Menu: '.$item['text']);
-        //     return false;
-        // }
+        if (!$this->verifyFeature($item)) {
+            Log::debug('Feature Desativada: '.$item['feature']. ' -> Menu: '.$item['text']);
+            return false;
+        }
         return parent::transform($item); // $item; //
     }
 
