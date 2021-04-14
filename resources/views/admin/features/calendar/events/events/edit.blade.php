@@ -52,9 +52,9 @@
                 <input type="hidden" name="lang" value="{{ request('lang') }}">
 
                 @if (! is_null(request('lang')) && request('lang') !== config('cms.default-language', 'en'))
-                    {!! FormMaker::fromObject($event->translationData(request('lang')), Config::get('cms.forms.event')) !!}
+                    {!! FormMaker::fromObject($event->translationData(request('lang')), Config::get('siravel.forms.event')) !!}
                 @else
-                    {!! FormMaker::fromObject($event, Config::get('cms.forms.event')) !!}
+                    {!! FormMaker::fromObject($event, Config::get('siravel.forms.event')) !!}
                 @endif
 
                 <div class="form-group text-right">

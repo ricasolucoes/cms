@@ -53,9 +53,9 @@
                 </div>
 
                 @if (! is_null(request('lang')) && request('lang') !== config('cms.default-language', 'en'))
-                    {!! FormMaker::fromObject($blog->translationData(request('lang')), Config::get('cms.forms.blog')) !!}
+                    {!! FormMaker::fromObject($blog->translationData(request('lang')), Config::get('siravel.forms.blog')) !!}
                 @else
-                    {!! FormMaker::fromObject($blog, Config::get('cms.forms.blog')) !!}
+                    {!! FormMaker::fromObject($blog, Config::get('siravel.forms.blog')) !!}
                 @endif
 
                 <div class="form-group text-right">
