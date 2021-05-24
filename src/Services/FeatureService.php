@@ -33,28 +33,24 @@ class FeatureService
      */
     public function isActive($code)
     {
-        // VErifica se tem nas Configuracoes, se nao, ja cancela
-        if (config('cms.active-core-features', false)) {
-            if (!in_array($code, config('cms.active-core-features'))) {
-                return false;
-            }
-        } else {
-            if (!in_array($code, config('siravel.active-core-features'))) {
-                return false;
-            }
-        }
-
-        // VErifica se ta ativo no banco
-        if (!$feature = $this->model->where('code', $code)->first()) {
-            return false;
-        }
-        if (!$feature->is_active) {
+        if (!\Muleta\Modules\Features\Resources\FeatureHelper::hasActiveFeature(
+            $code
+        )){
             return false;
         }
 
-        if (class_exists(\Cms\Services\BusinessService::class) && !app(\Cms\Services\BusinessService::class)->hasFeature($code)){
-            return false;
-        }
+        // @todo Removi , pq diferente do Siravel, ele é feito pra apenas um cliente,nao é multitenange
+        // // VErifica se ta ativo no banco
+        // if (!$feature = $this->model->where('code', $code)->first()) {
+        //     return false;
+        // }
+        // if (!$feature->is_active) {
+        //     return false;
+        // }
+
+        // if (class_exists(\Cms\Services\BusinessService::class) && !app(\Cms\Services\BusinessService::class)->hasFeature($code)){
+        //     return false;
+        // }
 
         return true;
     }

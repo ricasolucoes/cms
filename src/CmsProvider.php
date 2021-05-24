@@ -49,74 +49,176 @@ class CmsProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Cms|510' => [
-            [
-                'text'        => 'Dash',
-                'route'       => 'cms.sitec.dash',
-                'icon'        => 'fas fa-fw fa-gavel',
-                'icon_color'  => 'blue',
-                'order' => 512,
-                'label_color' => 'success',
-                // 'access' => \Porteiro\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Profile',
-                'route'       => 'cms.sitec.profile',
-                'icon'        => 'fas fa-fw fa-gavel',
-                'icon_color'  => 'blue',
-                'order' => 514,
-                'label_color' => 'success',
-                // 'access' => \Porteiro\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Actors',
-                'route'       => 'cms.components.actors.profile',
-                'icon'        => 'fas fa-fw fa-gavel',
-                'icon_color'  => 'blue',
-                'order' => 518,
-                'label_color' => 'success',
-                // 'access' => \Porteiro\Models\Role::$ADMIN
-            ],
+
+        [
+            'text'        => 'Eventos',
+            'url'         => 'events',
+            'icon'        => 'fas fa-fw fa-ship',
+            'icon_color'  => 'blue',
+            'label_color' => 'success',
+            'order' => 50,
+            'feature' => 'events',
+            'dev_status'  => 1, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            'level'       => 0, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            // 'access' => \Porteiro\Models\Role::$ADMIN
         ],
-        'Painel|501' => [
-            [
-                'text' => 'User',
-                'icon' => 'fas fa-fw fa-bomb',
-                'icon_color' => "blue",
-                'order' => 550,
-                'label_color' => "success",
-            ],
-            'User' => [
-                [
-                    'text'        => 'Home',
-                    'url'       => '/',
-                    'icon'        => 'fas fa-fw fa-industry',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'order' => 555,
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Profile',
-                    'route'       => 'facilitador.profile',
-                    'icon'        => 'fas fa-fw fa-industry',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'order' => 557,
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                // @todo Tirar Facilitador
-                [
-                    'text'        => 'Logout',
-                    'route'       => 'facilitador.logout',
-                    'icon'        => 'fas fa-fw fa-industry',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'order' => 559,
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-            ],
+        [
+            'text'        => 'Páginas',
+            'url'         => 'pages',
+            'icon'        => 'fas fa-fw fa-ship',
+            'icon_color'  => 'blue',
+            'label_color' => 'success',
+            'order' => 50,
+            'feature' => 'pages',
+            'dev_status'  => 1, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            'level'       => 0, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            // 'access' => \Porteiro\Models\Role::$ADMIN
         ],
+        [
+            'text'        => 'Faqs',
+            'url'         => 'faqs',
+            'icon'        => 'fas fa-fw fa-ship',
+            'icon_color'  => 'blue',
+            'label_color' => 'success',
+            'order' => 50,
+            'feature' => 'faqs',
+            'dev_status'  => 1, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            'level'       => 0, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            // 'access' => \Porteiro\Models\Role::$ADMIN
+        ],
+        [
+            'text'        => 'Blog',
+            'url'         => 'blog',
+            'icon'        => 'fas fa-fw fa-ship',
+            'icon_color'  => 'blue',
+            'label_color' => 'success',
+            'order' => 50,
+            'feature' => 'blog',
+            'dev_status'  => 1, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            'level'       => 0, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            // 'access' => \Porteiro\Models\Role::$ADMIN
+        ],
+        // [
+        //     'text' => 'Ger. Site',
+        //     'icon' => 'fas fa-fw fa-search',
+        //     'icon_color' => "blue",
+        //     'label_color' => "success",
+        //     'order' => 1550,
+        //     'section' => "master",
+        //     'feature' => 'bancos',
+        //     'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+        //     'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+        // ],
+        // [
+        //     'text' => 'Adm. Site',
+        //     'icon' => 'fas fa-fw fa-search',
+        //     'icon_color' => "blue",
+        //     'label_color' => "success",
+        //     'order' => 2450,
+        //     'section' => "admin",
+        //     'feature' => 'tradding',
+        //     'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+        //     'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+        // ],
+
+        // 'Ger. Site' => [
+        //     [
+        //         'text'        => 'Propostas',
+        //         'route'       => 'master.cms.propostas.index',
+        //         'icon'        => 'fas fa-fw fa-ship',
+        //         'icon_color'  => 'blue',
+        //         'label_color' => 'success',
+        //         'master' => "admin",
+        //         'feature' => 'cms',
+        //         'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+        //         'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+        //         // 'access' => \Porteiro\Models\Role::$ADMIN
+        //     ],
+        // ],
+        // 'Adm. Site' => [
+        //     [
+        //         'text'        => 'candles',
+        //         'route'       => 'admin.cms.candles.index',
+        //         'icon'        => 'fas fa-fw fa-ship',
+        //         'icon_color'  => 'blue',
+        //         'label_color' => 'success',
+        //         'section' => "admin",
+        //         'feature' => 'cms',
+        //         'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+        //         'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+        //         // 'access' => \Porteiro\Models\Role::$ADMIN
+        //     ],
+        // ]
+
+
+        // 'Cms|510' => [
+        //     [
+        //         'text'        => 'Dash',
+        //         'route'       => 'cms.sitec.dash',
+        //         'icon'        => 'fas fa-fw fa-gavel',
+        //         'icon_color'  => 'blue',
+        //         'order' => 512,
+        //         'label_color' => 'success',
+        //         // 'access' => \Porteiro\Models\Role::$ADMIN
+        //     ],
+        //     [
+        //         'text'        => 'Profile',
+        //         'route'       => 'cms.sitec.profile',
+        //         'icon'        => 'fas fa-fw fa-gavel',
+        //         'icon_color'  => 'blue',
+        //         'order' => 514,
+        //         'label_color' => 'success',
+        //         // 'access' => \Porteiro\Models\Role::$ADMIN
+        //     ],
+        //     [
+        //         'text'        => 'Actors',
+        //         'route'       => 'cms.components.actors.profile',
+        //         'icon'        => 'fas fa-fw fa-gavel',
+        //         'icon_color'  => 'blue',
+        //         'order' => 518,
+        //         'label_color' => 'success',
+        //         // 'access' => \Porteiro\Models\Role::$ADMIN
+        //     ],
+        // ],
+        // 'Painel|501' => [
+        //     [
+        //         'text' => 'User',
+        //         'icon' => 'fas fa-fw fa-bomb',
+        //         'icon_color' => "blue",
+        //         'order' => 550,
+        //         'label_color' => "success",
+        //     ],
+        //     'User' => [
+        //         [
+        //             'text'        => 'Home',
+        //             'url'       => '/',
+        //             'icon'        => 'fas fa-fw fa-industry',
+        //             'icon_color'  => 'blue',
+        //             'label_color' => 'success',
+        //             'order' => 555,
+        //             // 'access' => \Porteiro\Models\Role::$ADMIN
+        //         ],
+        //         [
+        //             'text'        => 'Profile',
+        //             'route'       => 'facilitador.profile',
+        //             'icon'        => 'fas fa-fw fa-industry',
+        //             'icon_color'  => 'blue',
+        //             'label_color' => 'success',
+        //             'order' => 557,
+        //             // 'access' => \Porteiro\Models\Role::$ADMIN
+        //         ],
+        //         // @todo Tirar Facilitador
+        //         [
+        //             'text'        => 'Logout',
+        //             'route'       => 'facilitador.logout',
+        //             'icon'        => 'fas fa-fw fa-industry',
+        //             'icon_color'  => 'blue',
+        //             'label_color' => 'success',
+        //             'order' => 559,
+        //             // 'access' => \Porteiro\Models\Role::$ADMIN
+        //         ],
+        //     ],
+        // ],
     ];
 
     /**

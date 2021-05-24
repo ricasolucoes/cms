@@ -41,9 +41,7 @@ class EventsController extends BaseController
             abort(404);
         }
 
-        return view('features.calendar.events.calendar')
-            ->with('events', $events)
-            ->with('calendar', $calendar);
+        return \Templeiro::view('features.calendar.events.calendar', compact('events', 'calendar'));
     }
 
     /**

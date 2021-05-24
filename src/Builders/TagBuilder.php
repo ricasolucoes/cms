@@ -3,7 +3,7 @@
 namespace Cms\Builders;
 
 use App\Contants\Tables;
-use Facilitador\Models\Builder;
+use Muleta\Modules\Eloquents\Displays\BuilderAbstract as Builder;
 use Illuminate\Database\Query\Expression;
 
 /**
