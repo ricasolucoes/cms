@@ -591,11 +591,7 @@ html[xmlns] .slides {
     padding:0;
 }
 .heading-txt aside {
-<<<<<<< HEAD
-	max-width: 630px;
-=======
 	max-width:570px;
->>>>>>> estrutura
 	margin:0 auto;
 }
 .readmore {

@@ -24,7 +24,7 @@
     "require": {
         "php": ">=7.4",
         "laravel/framework": "^7.0 || ^8.0",
-        "sierratecnologia/porteiro": "dev-master"
+        "sierratecnologia/porteiro": "^0.4.0"
     },
     "require-dev": {
         "phpro/grumphp": ">=1.3",
@@ -73,7 +73,6 @@
         "post-update-cmd": [],
         "post-create-project-cmd": []
     },
-    "repositories": [{"type": "path","url":"../**","options":{"symlink": true}}],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
