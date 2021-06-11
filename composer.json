@@ -24,7 +24,7 @@
     "require": {
         "php": ">=7.4",
         "laravel/framework": "^7.0 || ^8.0",
-        "sierratecnologia/porteiro": "^0.4.0"
+        "sierratecnologia/porteiro": "dev-master"
     },
     "require-dev": {
         "phpro/grumphp": ">=1.3",
