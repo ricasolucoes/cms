@@ -4,6 +4,7 @@ namespace Cms\Http\Controllers\Blog;
 
 use Cms\Http\Controllers\Controller;
 use Cms\Repositories\BlogRepository;
+use Templeiro;
 
 class BlogController extends Controller
 {
@@ -37,9 +38,9 @@ class BlogController extends Controller
             abort(404);
         }
 
-        return view('features.blogs.blogs.all')
-            ->with('tags', $tags)
-            ->with('blogs', $blogs);
+        return Templeiro::populateView('blog.all', [
+            'tags' => $tags,
+            'blogs' => $blogs]);
     }
 
     /**
@@ -58,9 +59,9 @@ class BlogController extends Controller
             abort(404);
         }
 
-        return view('features.blogs.blogs.all')
-            ->with('tags', $tags)
-            ->with('blogs', $blogs);
+        return Templeiro::populateView('blog.all', [
+            'tags' => $tags,
+            'blogs' => $blogs]);
     }
 
     /**
@@ -78,6 +79,6 @@ class BlogController extends Controller
             abort(404);
         }
 
-        return view('features.blog.'.$blog->template)->with('blog', $blog);
+        return Templeiro::populateView('blog.'.$blog->template, ['blog' => $blog]);
     }
 }

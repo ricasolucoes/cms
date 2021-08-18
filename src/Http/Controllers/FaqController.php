@@ -4,7 +4,7 @@ namespace Cms\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Cms\Repositories\FaqRepository;
-
+use Templeiro;
 
 class FaqController extends Controller
 {
@@ -34,6 +34,6 @@ class FaqController extends Controller
             abort(404);
         }
 
-        return view('features.writelabel.faqs.all')->with('faqs', $faqs);
+        return Templeiro::populateView('faqs.all', ['faqs' => $faqs]);
     }
 }
