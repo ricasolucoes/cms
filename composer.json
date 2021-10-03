@@ -24,6 +24,7 @@
     "require": {
         "php": ">=7.4",
         "laravel/framework": "^7.0 || ^8.0",
+        "sierratecnologia/templeiro": "dev-master",
         "sierratecnologia/porteiro": "dev-master"
     },
     "require-dev": {
@@ -39,7 +40,8 @@
         "laravel/dusk": ">=6.2",
         "codedungeon/phpunit-result-printer": ">=0.27.0",
         "friendsofphp/php-cs-fixer": ">=2.16",
-        "orchestra/testbench": ">=6.0"
+        "orchestra/testbench": ">=6.0",
+        "psalm/plugin-laravel": "^1.5"
     },
     "suggest": {
         "sierratecnologia/telefonica": "Recomendado",
