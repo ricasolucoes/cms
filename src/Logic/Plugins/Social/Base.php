@@ -5,7 +5,7 @@ namespace Cms\Logic\Plugins\Social;
 class Base
 {
 
-    public function runMetrics()
+    public function runMetrics(): void
     {
 
     }

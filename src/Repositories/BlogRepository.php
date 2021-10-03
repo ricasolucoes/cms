@@ -54,9 +54,9 @@ class BlogRepository extends CmsRepository
     /**
      * Gets all tags of an entry
      *
-     * @return Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
      */
-    public function allTags()
+    public function allTags(): \Illuminate\Support\Collection
     {
         $tags = [];
 

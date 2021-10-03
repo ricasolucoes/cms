@@ -90,9 +90,9 @@ class HotelBeds
      * @param string $path        Path to module asset
      * @param string $contentType Asset type
      *
-     * @return string
+     * @return void
      */
-    public function includeDateInterval($init = "2018-02-01", $end = "2018-02-10")
+    public function includeDateInterval($init = "2018-02-01", $end = "2018-02-10"): void
     {
         $this->rqData = new \hotelbeds\hotel_api_sdk\helpers\Availability();
         //        $this->rqData->stay = new Stay(
@@ -110,8 +110,10 @@ class HotelBeds
      *
      * @param string $string Notification string
      * @param string $type   Notification type
+     *
+     * @return void
      */
-    public function includeDestine($destine = "PMI")
+    public function includeDestine($destine = "PMI"): void
     {
         //        $this->rqData->destination = new Destination($destine);
     }
@@ -121,9 +123,9 @@ class HotelBeds
      *
      * @param array $locations Locations array
      *
-     * @return string
+     * @return void
      */
-    public function includePeoples($adults = 2, $children = 1, $rooms = 1)
+    public function includePeoples($adults = 2, $children = 1, $rooms = 1): void
     {
         $occupancy = new Occupancy();
         $occupancy->adults = $adults;
@@ -287,7 +289,7 @@ class HotelBeds
      *
      * @param obj $object
      *
-     * @return string
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     public function rollbackUrl($object)
     {

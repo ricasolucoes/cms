@@ -29,9 +29,9 @@ class FeatureService
     /**
      * All features
      *
-     * @return Collection
+     * @return bool
      */
-    public function isActive($code)
+    public function isActive($code): bool
     {
         if (!\Muleta\Modules\Features\Resources\FeatureHelper::hasActiveFeature(
             $code

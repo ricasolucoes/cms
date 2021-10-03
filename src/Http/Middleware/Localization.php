@@ -98,8 +98,10 @@ class Localization
      * Will try both the standard locale name and the UTF8 variant.
      *
      * @param string $locale
+     *
+     * @return void
      */
-    protected function setSystemDateLocale(string $locale)
+    protected function setSystemDateLocale(string $locale): void
     {
         $systemLocale = $this->localeMap[$locale] ?? $locale;
         $set = setlocale(LC_TIME, $systemLocale);

@@ -16,13 +16,13 @@ class Base
         \Cms\Models\Point::class,
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('gamification', 'Admin\GamificationController');
         
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         $s = 'gamification';
         Route::post('/gamification', ['as' => $s . 'gamification',   'uses' => 'GamificationController@postTravel']);

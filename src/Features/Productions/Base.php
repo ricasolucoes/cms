@@ -16,12 +16,12 @@ class Base
         \Cms\Models\Production::class,
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('productions', 'Admin\ProductionsController');
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         $s = 'production';
         Route::post('/production', ['as' => $s . 'production',   'uses' => 'ProductionsController@postProduction']);

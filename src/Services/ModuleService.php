@@ -4,7 +4,7 @@ namespace Cms\Services;
 
 class ModuleService
 {
-    public function menus()
+    public function menus(): string
     {
         $modulePath = base_path(config('siravel.module-directory').'/');
         $features = glob($modulePath.'*');

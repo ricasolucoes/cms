@@ -157,7 +157,7 @@ class SocialAuthService
      * @return string
      * @throws SocialDriverNotConfigured
      */
-    private function validateDriver($socialDriver)
+    private function validateDriver(string $socialDriver)
     {
         $driver = trim(strtolower($socialDriver));
 
@@ -177,7 +177,7 @@ class SocialAuthService
      * @param  $driver
      * @return bool
      */
-    private function checkDriverConfigured($driver)
+    private function checkDriverConfigured(string $driver)
     {
         $lowerName = strtolower($driver);
         $configPrefix = 'services.' . $lowerName . '.';
@@ -207,7 +207,7 @@ class SocialAuthService
      * @param  $driver
      * @return mixed
      */
-    public function getDriverName($driver)
+    public function getDriverName(string $driver)
     {
         return \Illuminate\Support\Facades\Config::get('services.' . strtolower($driver) . '.name');
     }

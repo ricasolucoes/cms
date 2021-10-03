@@ -22,7 +22,8 @@ class BusinessNewRegisterListener
     /**
      * Handle the event.
      *
-     * @param  \App\Events\BusinessNewRegister $event
+     * @param BusinessNewRegister $event
+     *
      * @return void
      */
     public function handle(BusinessNewRegister $event)

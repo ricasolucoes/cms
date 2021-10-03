@@ -23,7 +23,7 @@ class Category extends Model
     protected $guarded  = array('id');
     
 
-    public function parentId()
+    public function parentId(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(self::class);
     }
@@ -43,9 +43,9 @@ class Category extends Model
     /**
      * Get the author.
      *
-     * @return User
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function author()
+    public function author(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
@@ -53,9 +53,9 @@ class Category extends Model
     /**
      * Get the slider's images.
      *
-     * @return array
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function articles()
+    public function articles(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Article::class, 'article_category_id');
     }
@@ -75,9 +75,9 @@ class Category extends Model
     /**
      * Get the category's language.
      *
-     * @return Language
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function language()
+    public function language(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Language::class, 'language_code');
     }

@@ -19,8 +19,10 @@ class UserRegisteredEmailListener
      * Handle the event.
      *
      * @param UserRegisteredEmail $event
+     *
+     * @return void
      */
-    public function handle(UserRegisteredEmail $event)
+    public function handle(UserRegisteredEmail $event): void
     {
         Notification::send($event->user, new NewAccountEmail($event->password));
     }

@@ -23,7 +23,7 @@ class Blog extends CmsModel
         'url' => 'required|string',
     ];
 
-    public function getEntryAttribute($value)
+    public function getEntryAttribute($value): Normalizer
     {
         return new Normalizer($value);
     }

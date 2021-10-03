@@ -50,11 +50,14 @@ class Page extends BaseModel
         parent::__construct($attributes);
     }
 
-    public function getEntryAttribute($value)
+    public function getEntryAttribute($value): Normalizer
     {
         return new Normalizer($value);
     }
 
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
     public function getHeroImageUrlAttribute($value)
     {
         return url(str_replace('public/', 'storage/', $this->hero_image));
@@ -80,6 +83,9 @@ class Page extends BaseModel
      */
     public static $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE];
 
+    /**
+     * @return void
+     */
     public function save(array $options = [])
     {
         // If no author has been assigned, assign the current user's id as the author of the post

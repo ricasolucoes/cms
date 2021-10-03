@@ -16,14 +16,14 @@ class Base
         
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('Shopping', 'Admin\ShoppingController');
         // Route::resource('hotels', 'Admin\HotelsController');
         // Route::resource('rooms', 'Admin\RoomsController');
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         $s = 'shopping';
         Route::post('/travel', ['as' => $s . 'travel',   'uses' => 'ShoppingController@postTravel']);

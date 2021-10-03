@@ -16,13 +16,13 @@ class Base
         \Cms\Models\Marketing::class,
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('marketings', 'Admin\MarketingsController');
 
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         $s = 'marketing';
         Route::post('/marketing', ['as' => $s . 'marketing',   'uses' => 'MarketingsController@postTravel']);

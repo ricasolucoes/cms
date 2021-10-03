@@ -31,9 +31,9 @@ class AccountService
     /**
      * Sets the persepctive to the current billing cycle
      *
-     * @return Account
+     * @return static
      */
-    public function currentBillingCycle()
+    public function currentBillingCycle(): self
     {
         $this->inBillingCycle = true;
         return $this;

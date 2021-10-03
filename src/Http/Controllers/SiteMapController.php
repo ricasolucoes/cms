@@ -17,7 +17,7 @@ class SiteMapController extends AppBaseController
         $this->service = $service;
     }
 
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         $items = $this->service->collectSiteMapItems();
 

@@ -34,7 +34,7 @@ class AppBaseController extends Controller
         return Response::json(ResponseUtil::makeError($error), $code);
     }
 
-    public function getFeature($code)
+    public function getFeature(string $code)
     {
         if (!isset($this->modelFeatures[$code])) {
             return false;

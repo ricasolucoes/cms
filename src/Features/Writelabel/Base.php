@@ -16,12 +16,12 @@ class Base
         \Stalker\Models\Photo::class,
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('writelabel', 'Admin\WritelabelController');
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         $s = 'writelabel';
         Route::post('/writelabel', ['as' => $s . 'writelabel',   'uses' => 'WritelabelController@postTravel']);

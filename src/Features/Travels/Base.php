@@ -18,14 +18,14 @@ class Base
         \Cms\Models\Travel::class,
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('travels', 'Admin\TravelsController');
         // Route::resource('hotels', 'Admin\HotelsController');
         // Route::resource('rooms', 'Admin\RoomsController');
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         $s = 'travels';
         Route::get('/',         ['as' => $s . 'home',   'uses' => 'PagesController@getHome']);

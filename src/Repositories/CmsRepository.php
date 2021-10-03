@@ -216,7 +216,7 @@ class CmsRepository
      *
      * @return array
      */
-    public function parseTemplate($payload, $currentBlocks, $module)
+    public function parseTemplate($payload, $currentBlocks, string $module)
     {
         if (isset($payload['template'])) {
             $content = file_get_contents(base_path('resources/themes/'.\Illuminate\Support\Facades\Config::get('siravel.frontend-theme').'/'.$module.'/'.$payload['template'].'.blade.php'));

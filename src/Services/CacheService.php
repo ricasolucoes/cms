@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 class CacheService
 {
-    private static function getBusinessKey($key)
+    private static function getBusinessKey($key): string
     {
         return Business::getCode().$key;
     }

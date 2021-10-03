@@ -17,7 +17,12 @@ class Base
     ];
     
 
-    public function getAdminMenu()
+    /**
+     * @return \Closure
+     *
+     * @psalm-return \Closure():void
+     */
+    public function getAdminMenu(): \Closure
     {
         return function () {
             Route::resource('/posts', 'PostController');
@@ -29,7 +34,12 @@ class Base
         };
     }
 
-    public function getSiteMenu()
+    /**
+     * @return \Closure
+     *
+     * @psalm-return \Closure():void
+     */
+    public function getSiteMenu(): \Closure
     {
         return function () {
             Route::get('/', 'BlogController@index');
@@ -42,7 +52,12 @@ class Base
         };
     }
 
-    public function apis()
+    /**
+     * @return \Closure
+     *
+     * @psalm-return \Closure():void
+     */
+    public function apis(): \Closure
     {
         return function () {
             Route::post('/auth/token', 'Api\AuthController@getAccessToken');

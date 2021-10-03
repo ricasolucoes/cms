@@ -6,7 +6,12 @@ use Illuminate\Support\Facades\Config;
 
 class BlogService
 {
-    public function getTemplatesAsOptions()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: string}
+     */
+    public function getTemplatesAsOptions(): array
     {
         $availableTemplates = ['show'];
         $templates = glob(base_path('resources/themes/'.Config::get('siravel.frontend-theme').'/blog/*'));

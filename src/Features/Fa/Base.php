@@ -16,13 +16,13 @@ class Base
         \Cms\Models\Fa::class,
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('fa', 'Admin\FaController');
         
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         Route::post('/fa', ['as' => $s . 'fa',   'uses' => 'FaController@postTravel']);
         

@@ -31,10 +31,13 @@ class EmailConfirmationService
      * Create new confirmation for a user,
      * Also removes any existing old ones.
      *
-     * @param  \Cms\Models\User $user
+     * @param \Cms\Models\User $user
+     *
      * @throws ConfirmationEmailException
+     *
+     * @return void
      */
-    public function sendConfirmation(User $user)
+    public function sendConfirmation(User $user): void
     {
         if ($user->email_confirmed) {
             throw new ConfirmationEmailException(trans('errors.email_already_confirmed'), '/login');

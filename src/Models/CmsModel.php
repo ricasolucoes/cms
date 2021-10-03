@@ -43,8 +43,10 @@ class CmsModel extends Model
      * After the item is saved to the database.
      *
      * @param object $payload
+     *
+     * @return void
      */
-    public function onSaved($payload)
+    public function onSaved($payload): void
     {
         if (!request()->is('admin/revert/*') && !request()->is('admin/rollback/*/*')) {
             unset($payload->attributes['created_at']);
@@ -70,8 +72,10 @@ class CmsModel extends Model
      * When the item is being deleted.
      *
      * @param object $payload
+     *
+     * @return void
      */
-    public function onDeleting($payload)
+    public function onDeleting($payload): void
     {
         $type = get_class($payload);
         $id = $payload->id;

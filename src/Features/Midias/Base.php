@@ -16,13 +16,13 @@ class Base
         \Stalker\Models\Photo::class,
     ];
 
-    public function getAdminMenu()
+    public function getAdminMenu(): void
     {
         // Route::resource('photos', 'Admin\PhotosController');
 
     }
 
-    public function getSiteMenu()
+    public function getSiteMenu(): void
     {
         $s = 'photo';
         Route::post('/photo', ['as' => $s . 'photo',   'uses' => 'PhotosController@postTravel']);

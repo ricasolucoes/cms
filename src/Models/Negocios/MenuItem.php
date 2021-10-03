@@ -50,7 +50,7 @@ class MenuItem extends Model
             ->orderBy('order');
     }
 
-    public function menu()
+    public function menu(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Menu::class);
     }
@@ -99,7 +99,7 @@ class MenuItem extends Model
         return json_decode($this->attributes['parameters']);
     }
 
-    public function setParametersAttribute($value)
+    public function setParametersAttribute($value): void
     {
         if (is_array($value)) {
             $value = json_encode($value);
@@ -108,7 +108,7 @@ class MenuItem extends Model
         $this->attributes['parameters'] = $value;
     }
 
-    public function setUrlAttribute($value)
+    public function setUrlAttribute($value): void
     {
         if (is_null($value)) {
             $value = '';
@@ -122,9 +122,9 @@ class MenuItem extends Model
      *
      * @param number $parent (Optional) Parent id. Default null
      *
-     * @return number Order number
+     * @return int Order number
      */
-    public function highestOrderMenuItem($parent = null)
+    public function highestOrderMenuItem($parent = null): int
     {
         $order = 1;
 

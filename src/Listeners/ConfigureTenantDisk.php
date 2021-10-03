@@ -6,7 +6,7 @@ use Tenancy\Affects\Filesystems\Events\ConfigureDisk;
 
 class ConfigureTenantDisk
 {
-    public function handle(ConfigureDisk $event)
+    public function handle(ConfigureDisk $event): void
     {
         $event->config = [
             'driver' => 'local',

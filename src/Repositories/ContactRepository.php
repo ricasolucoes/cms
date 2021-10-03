@@ -70,9 +70,11 @@ class ContactRepository
      *
      * @param string $input
      *
-     * @return Contact
+     * @return array
+     *
+     * @psalm-return array{0: mixed, 1: mixed, 2: mixed}
      */
-    public function search($input)
+    public function search($input): array
     {
         $query = Contact::orderBy('created_at', 'desc');
         $query->where('id', 'LIKE', '%'.$input['term'].'%');

@@ -84,7 +84,7 @@ class LdapService
      * @return array|null
      * @throws LdapException
      */
-    public function getUserDetails($userName)
+    public function getUserDetails(string $userName)
     {
         $emailAttr = $this->config['email_attribute'];
         $displayNameAttr = $this->config['display_name_attribute'];
@@ -154,10 +154,14 @@ class LdapService
      * Bind the system user to the LDAP connection using the given credentials
      * otherwise anonymous access is attempted.
      *
-     * @param  $connection
+     * @param $connection
+     * @param resource $connection
+     *
      * @throws LdapException
+     *
+     * @return void
      */
-    protected function bindSystemUser($connection)
+    protected function bindSystemUser($connection): void
     {
         $ldapDn = $this->config['dn'];
         $ldapPass = $this->config['pass'];
@@ -350,11 +354,14 @@ class LdapService
     /**
      * Sync the LDAP groups to the user roles for the current user
      *
-     * @param  \Cms\Models\User $user
-     * @param  string               $username
+     * @param \Cms\Models\User $user
+     * @param string               $username
+     *
      * @throws LdapException
+     *
+     * @return void
      */
-    public function syncGroups(User $user, string $username)
+    public function syncGroups(User $user, string $username): void
     {
         $userLdapGroups = $this->getUserGroups($username);
 

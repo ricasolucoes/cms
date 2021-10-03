@@ -71,24 +71,30 @@ class Feature extends Base
 
     /**
      * Get all of the business that are assigned this tag.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function business()
+    public function business(): \Illuminate\Database\Eloquent\Relations\MorphToMany
     {
         return $this->businesses();
     }
 
     /**
      * Get all of the businesses that are assigned this item.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function businesses()
+    public function businesses(): \Illuminate\Database\Eloquent\Relations\MorphToMany
     {
         return $this->morphedByMany('Cms\Models\Negocios\Business', 'featureable');
     }
 
     /**
      * Get all of the users that are assigned this tag.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function users()
+    public function users(): \Illuminate\Database\Eloquent\Relations\MorphToMany
     {
         return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class), 'featureable');
     }

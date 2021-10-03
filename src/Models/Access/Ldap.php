@@ -78,13 +78,14 @@ class Ldap
     /**
      * Search and get entries immediately.
      *
-     * @param  resource   $ldapConnection
-     * @param  string     $baseDn
-     * @param  string     $filter
-     * @param  array|null $attributes
-     * @return resource
+     * @param resource   $ldapConnection
+     * @param string     $baseDn
+     * @param string     $filter
+     * @param array|null $attributes
+     *
+     * @return array
      */
-    public function searchAndGetEntries($ldapConnection, $baseDn, $filter, array $attributes = null)
+    public function searchAndGetEntries($ldapConnection, $baseDn, $filter, array $attributes = null): array
     {
         $search = $this->search($ldapConnection, $baseDn, $filter, $attributes);
         return $this->getEntries($ldapConnection, $search);

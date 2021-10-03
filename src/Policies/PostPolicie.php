@@ -13,8 +13,9 @@ class PostPolicy
     /**
      * Determine whether the user can view the post.
      *
-     * @param  \Cms\Models\User $user
-     * @param  \App\Post            $post
+     * @param \Cms\Models\User $user
+     * @param Post $post
+     *
      * @return mixed
      */
     public function view(User $user, Post $post)
@@ -53,8 +54,9 @@ class PostPolicy
     /**
      * Determine whether the user can update the post.
      *
-     * @param  \Cms\Models\User $user
-     * @param  \App\Post            $post
+     * @param \Cms\Models\User $user
+     * @param Post $post
+     *
      * @return mixed
      */
     public function update(User $user, Post $post)
@@ -71,8 +73,9 @@ class PostPolicy
     /**
      * Determine whether the user can delete the post.
      *
-     * @param  \Cms\Models\User $user
-     * @param  \App\Post            $post
+     * @param \Cms\Models\User $user
+     * @param Post $post
+     *
      * @return mixed
      */
     public function delete(User $user, Post $post)

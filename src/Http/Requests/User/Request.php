@@ -134,10 +134,13 @@ abstract class Request extends FormRequest
      *  ]
      * ];
      *
-     * @param  array
-     * @return array
+     * @param array
+     *
+     * @return ((mixed|string)[]|mixed)[][]
+     *
+     * @psalm-return non-empty-list<array<array<mixed|string>|mixed>>
      */
-    public static function parseRulesAndLabels(array $originalRules)
+    public static function parseRulesAndLabels(array $originalRules): array
     {
         $parsed = ['labels' => [], 'rules' => []];
 

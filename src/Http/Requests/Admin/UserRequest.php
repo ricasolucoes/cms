@@ -11,9 +11,11 @@ class UserRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array
+     * @return null|string[]
+     *
+     * @psalm-return array{name?: 'required|min:3', email?: string, password?: 'required'}|null
      */
-    public function rules()
+    public function rules(): ?array
     {
         if($this->segment(3)!="") {
             $user = User::find($this->segment(3));

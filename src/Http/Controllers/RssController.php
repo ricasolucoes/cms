@@ -25,7 +25,7 @@ class RssController extends AppBaseController
         $this->repo = app($feature['repository']);
     }
 
-    public function index(Request $request)
+    public function index(Request $request): Response
     {
         $module = $this->module;
 
