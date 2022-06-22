@@ -3,11 +3,11 @@
 namespace Cms\Models;
 
 use App\Models\Model;
-use SierraTecnologia\Cashier\Billable;
+// use SierraTecnologia\Cashier\Billable; //@todo removi
 
 class UserMeta extends Model
 {
-    use Billable;
+    // use Billable;
 
     /**
      * The database table used by the model.

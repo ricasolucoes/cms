@@ -41,7 +41,7 @@ class BlogRepository extends CmsRepository
      *
      * @param string $tag
      *
-     * @return Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
      */
     public function tags($tag)
     {

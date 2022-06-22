@@ -14,6 +14,10 @@ class ScopeForBusinessInTables extends Migration
      */
     public function up()
     {
+        if (!Schema::hasTable('businesses')) {
+            return ;
+        }
+        
         if (Schema::hasTable('analytics') && ! Schema::hasColumn('analytics', 'business_code')) {
             Schema::table('analytics', function (Blueprint $table) {
                 $table->string('business_code');
