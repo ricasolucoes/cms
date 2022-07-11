@@ -2,19 +2,14 @@
 
 namespace Cms\Models;
 
-use App\Models\Model;
+
+
+use Porteiro\Models\UserMeta as Model;
 // use SierraTecnologia\Cashier\Billable; //@todo removi
 
 class UserMeta extends Model
 {
     // use Billable;
-
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'user_meta';
 
     /**
      * The attributes that are mass assignable.
@@ -32,15 +27,7 @@ class UserMeta extends Model
         'card_last_four',
         'terms_and_cond',
     ];
-
-    /**
-     * Get the user that owns the phone.
-     */
-    public function user()
-    {
-        return $this->belongsTo(\Illuminate\Support\Facades\Config::get('application.auth.model', \App\Models\User::class));
-    }
-
+    
     /**
      * Get all of the subscriptions for the business.
      */
