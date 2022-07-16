@@ -24,13 +24,13 @@
         </div>
     </div>
 
-    @include('layouts.module-header', [ 'module' => 'pages' ])
+    @include('pedreiro::layouts.module-header', [ 'module' => 'pages' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($pages->count() === 0)
-                    @include('layouts.module-search', [ 'module' => 'pages' ])
+                    @include('pedreiro::layouts.module-search', [ 'module' => 'pages' ])
                 @else
                     <table class="table table-striped">
                         <thead>

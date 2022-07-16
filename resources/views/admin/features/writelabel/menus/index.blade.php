@@ -22,13 +22,13 @@
         </div>
     </div>
 
-    @include('layouts.module-header', [ 'module' => 'menus' ])
+    @include('pedreiro::layouts.module-header', [ 'module' => 'menus' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($menus->count() === 0)
-                    @include('layouts.module-search', [ 'module' => 'menus' ])
+                    @include('pedreiro::layouts.module-search', [ 'module' => 'menus' ])
                 @else
                     <table class="table table-striped">
                         <thead>

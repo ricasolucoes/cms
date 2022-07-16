@@ -25,7 +25,7 @@
         <div class="row mb-4">
             <div class="col-md-12">
                 <ul class="nav nav-tabs">
-                    @include('layouts.tabs', [ 'module' => 'promotions', 'item' => $promotion ])
+                    @include('pedreiro::layouts.tabs', [ 'module' => 'promotions', 'item' => $promotion ])
                 </ul>
             </div>
         </div>
