@@ -39,10 +39,14 @@ class CreateFeaturesBlogsTables extends Migration
             $table->tinyInteger('is_blocked')->unsigned()->default(0);
 
             // Translation
-            $table->string('language_code');
-            $table->string('country_code')->nullable();
-            $table->foreign('language_code')->references('code')->on('languages');
-            $table->foreign('country_code')->references('code')->on('countries');
+            if (Schema::hasTable('languages')) {
+                $table->string('language_code');
+                $table->foreign('language_code')->references('code')->on('languages');
+            }
+            if (Schema::hasTable('countries')) {
+                $table->string('country_code')->nullable();
+                $table->foreign('country_code')->references('code')->on('countries');
+            }
 
             $table->timestamps();
         });
@@ -67,14 +71,20 @@ class CreateFeaturesBlogsTables extends Migration
 			$table->unsignedInteger('user_id_edited')->nullable();
             $table->foreign('user_id_edited')->references('id')->on('users')->onDelete('set null');
             
-			$table->unsignedInteger('category_id')->nullable();
-			$table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+            if (Schema::hasTable('categories')) {
+                $table->unsignedInteger('category_id')->nullable();
+                $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+            }
 	
             // Translation
-            $table->string('language_code');
-            $table->string('country_code')->nullable();
-            $table->foreign('language_code')->references('code')->on('languages');
-            $table->foreign('country_code')->references('code')->on('countries');
+            if (Schema::hasTable('languages')) {
+                $table->string('language_code');
+                $table->foreign('language_code')->references('code')->on('languages');
+            }
+            if (Schema::hasTable('countries')) {
+                $table->string('country_code')->nullable();
+                $table->foreign('country_code')->references('code')->on('countries');
+            }
             
 			$table->timestamps();
             $table->softDeletes();
