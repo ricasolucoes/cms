@@ -5,8 +5,8 @@
         <div class="row">
 
             <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="card card-default">
+                    <div class="card-header">
                         <h2>
                             Edit Category
 
@@ -14,7 +14,7 @@
                         </h2>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="box-body panel-body card-body">
                         {!! Form::model($category, ['method' => 'PUT', 'url' => "/admin/categories/{$category->id}", 'class' => 'form-horizontal', 'role' => 'form']) !!}
 
                             @include('admin.categories._form')
