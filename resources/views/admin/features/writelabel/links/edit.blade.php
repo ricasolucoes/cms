@@ -12,7 +12,7 @@
         <div class="row mb-4">
             <div class="col-md-12">
                 <ul class="nav nav-tabs">
-                    @include('layouts.tabs', [ 'module' => 'links', 'item' => $links ])
+                    @include('pedreiro::layouts.tabs', [ 'module' => 'links', 'item' => $links ])
                 </ul>
             </div>
         </div>

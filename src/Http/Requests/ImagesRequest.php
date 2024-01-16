@@ -4,7 +4,7 @@ namespace Cms\Http\Requests;
 
 use Auth;
 use Gate;
-use Stalker\Models\Imagen as Image;
+use MediaManager\Models\Imagen as Image;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ImagesRequest extends FormRequest

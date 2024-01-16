@@ -5,8 +5,8 @@
         <div class="row">
 
             <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="card card-default">
+                    <div class="card-header">
                         <h2>
                             {{ $post->title }} <small>by {{ $post->user->name }}</small>
 
@@ -14,7 +14,7 @@
                         </h2>
                     </div>
 
-                    <div class="panel-body">
+                    <div class="box-body panel-body card-body">
                         <p>{{ $post->body }}</p>
 
                         <p><strong>Category: </strong>{{ $post->category->name }}</p>

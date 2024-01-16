@@ -59,7 +59,7 @@
                 <div class="row">
                     @if ($images->count() === 0)
                         <div class="col-md-12">
-                            @include('layouts.module-search', [ 'module' => 'images' ])
+                            @include('pedreiro::layouts.module-search', [ 'module' => 'images' ])
                         </div>
                     @else
                         @foreach($images as $image)
