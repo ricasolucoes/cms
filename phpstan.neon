@@ -1,0 +1,30 @@
+includes:
+    - vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    level: 8
+    paths:
+        - src
+
+    # Exclude paths
+    excludePaths:
+        - src/Console/stubs
+        - src/Console/Commands/stubs
+
+    # Ignore errors
+    ignoreErrors:
+        # Ignore Laravel facades magic
+        - '#Call to an undefined static method Illuminate\\Support\\Facades#'
+
+    # Check missing types
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+
+    # Report unmatched ignored errors
+    reportUnmatchedIgnoredErrors: false
+
+    # Treat PHP level as base
+    treatPhpDocTypesAsCertain: false
+
+    # Better error messages
+    inferPrivatePropertyTypeFromConstructor: true
